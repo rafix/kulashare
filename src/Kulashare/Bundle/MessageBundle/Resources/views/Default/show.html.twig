@@ -1,0 +1,17 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+
+{% block content %}
+<div class="container">
+<div class="page-header">
+    <h1 class="text-center">Subject: {{ message.subject }}</h1>
+</div>
+<div class="well col-sm-12">
+ <p>Writed by: {{ message.author }} at {{ message.createdAt |date }}</p>
+ <p>{{ message.comment }}</p>
+
+</div>
+
+
+</div>
+{% endblock %}

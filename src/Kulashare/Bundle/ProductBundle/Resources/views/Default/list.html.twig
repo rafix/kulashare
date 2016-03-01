@@ -1,0 +1,75 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block javascripts %}		
+	
+{% endblock %}
+
+{% block content %}
+	<div class="container wrap-my-products">
+	
+    	<div class="panel panel-default">
+		  <div class="panel-heading col-sm-12" style="padding:6px 15px 42px;">
+		  
+		    <img class="img-responsive" style="max-width:860px; width: 100%" src="{{ asset('img/my-products.jpg') }}" alt="Product banner"/>
+        	
+		    <div class="col-sm-9"><h3 class="panel-title" style="padding-top:12px;">My Products</h3></div><div class="col-sm-3 hidden-xs"><div style="text-align:right">
+		  		<a class="btn btn-primary new-productbtn" href="{{ path('kulashare_product_add') }}"> 
+		  			<i class="glyphicon glyphicon-plus"></i><span>New Product</span>
+		  		</a>
+		  	</div>
+		  	</div>
+		  </div>
+		  <div class="panel-body">
+		  {% if products|length > 0 %}
+		  {{ sylius_resource_paginate(paginator, [10, 30, 50]) }}
+		    <table class="table table-striped">
+			  <thead>
+			  	<tr>
+					<th></th>
+			  		<th>ID</th>
+			  		<th>Name</th>
+			  		<th>Price</th>
+			  		<th style="width: 195px;">Description</th>
+			  		<th>Updated At</th>
+			  		<th style="width: 177px;"></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  	{% for item in products %}
+			  	<tr>
+					<td><img src="{{ item.image ? item.image.path : asset('img/logo-ks.png') }}"  alt="{{ item.name }}" class="img-responsive" style="max-width:40px"/></td>
+			  		<td>{{ item.ID }}</td>
+			  		<td>{{ item.name }}</td>
+			  		<td>${{(item.price/100) |number_format(2, '.', ',')}}</td>
+			  		<td>{{item.description}}</td>
+			  		<td>{{item.updatedAt |date('Y-m-d') }}</td>
+			  		<td>
+			  			<a href="{{ path('kulashare_product_show',  {'id': item.id}) }}" target="_blank" class="white"><div class="text-center col-sm-3 col-xs-3 btn btn-primary"  title="View Item" style="margin: 2px 5px;padding: 6px;">
+						    <i class="glyphicon glyphicon-eye-open"></i>
+						</div></a>
+			  			<a href="{{ path('kulashare_product_edit',  {'id': item.id}) }}" class="white"><div class="text-center col-sm-3 col-xs-3 btn btn-primary" title="Edit Item" style="margin: 2px 5px;padding: 6px;">
+						    <i class="glyphicon glyphicon-pencil"></i>
+						</div></a>
+						<a href="{{ path('kulashare_product_delete',  {'id': item.id})}}" class="white"><div class="text-center  col-sm-3 col-xs-3 btn btn-danger" title="Delete Item" style="margin: 2px 5px;padding: 6px;">
+						    <i class="glyphicon glyphicon-trash"></i>
+						</div></a>
+			  		</th>
+			  	</tr>
+			  	{% endfor %}
+			  </tbody>
+			</table>
+			{% else %}
+   				You have not any product added yet. Add new products clicking on "New Product" button
+			{% endif %}
+		  </div>
+		  <div class="panel-footer">
+		  	<div style="text-align:right">
+		  		<a class="btn btn-primary" href="{{ path('kulashare_product_add') }}"> 
+		  			<i class="glyphicon glyphicon-plus"></i><span>New Product</span>
+		  		</a>
+		  	</div>
+		  </div>
+		</div>
+	
+	</div>
+{% endblock %}
+

@@ -1,0 +1,380 @@
+{% extends 'SyliusWebBundle:Frontend/Account:layout.html.twig' %}
+
+{% block content %}
+    <!-- Region content -->
+    <div class="container-fluid container-dashboard">
+         
+        <div class="row"><p class="bread">Home &gt; <span class="title-bread-blue">Dashboard</span></p></div>
+        <div class="row">
+                    <div class="col-sm-9" id="left-dashboard">
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-1">
+                            <div class="title-item-dashboard">
+                                <h3>Transactions</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                <div class="item-top">
+                                    <div class="col-sm-4 photo">
+                                    {% image 'img/img_transaction_1.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  class="img-responsive"/>
+                                        {% endimage %}                                       
+                                    </div>
+                                    <div class="col-sm-8 column-2">
+                                        <p><span class="span_blue">Power Drill:</span><span class="span_red float_right">$10/day</span></p>
+                                        <p><span>Borrow:</span><span class="float_right">5/22/2015</span></p>
+                                        <p><span>Return:</span><span class="float_right">5/25/2015</span></p>
+                                        <p><span class="span_blue">Total:</span><span class="span_red float_right">$10/day</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="item-bottom">
+                                    <div class="col-sm-4 photo">
+                                         {% image 'img/img_transaction_2.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  class="img-responsive"/>
+                                        {% endimage %}                                        
+                                    </div>
+                                    <div class="col-sm-8 column-2">
+                                        <p><span class="span_blue">Truck Dolly:</span><span class="span_red float_right">$12/day</span></p>
+                                        <p><span>Borrow:</span><span class="float_right">5/22/2015</span></p>
+                                        <p><span>Return:</span><span class="float_right">5/25/2015</span></p>
+                                        <p><span class="span_blue">Total:</span><span class="span_red float_right">$35/day</span></p>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <div class="col-sm-6 col-xs-6" id="left-item-footer">
+                                    <a href="#">Return allert </a>
+                                </div>
+                                <div class="col-sm-6 col-xs-6" id="right-item-footer">
+                                    <a href="#">Extend rental</a>
+                                </div>
+                            </div>
+                        </div> <!-- /#item-dashboard-1 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-2">
+                            <div class="title-item-dashboard">
+                                <h3>Gallery</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                            {% image 'img/img_gallery_bg.png' %}
+                                <img src="{{ asset_url }}" alt="Be Kula"  class="img-responsive"/>
+                            {% endimage %}
+                               
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <div class="col-sm-6 col-xs-6" id="left-item-footer">
+                                    <a href="#">Prev </a>
+                                </div>
+                                <div class="col-sm-6 col-xs-6" id="right-item-footer">
+                                    <a href="#">Next</a>
+                                </div>
+                            </div>
+                        </div> <!-- /#item-dashboard-2 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-3">
+                            <div class="title-item-dashboard">
+                                <h3>My List</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                    <div class="item-dash3-subtitle"><p>Watch List</p></div>
+                                    <ul class="ul-my-list">
+                                        {% for  item in products | slice(0,3) %}
+                                            <li class="col-sm-4 col-xs-4 item-watch-list">
+                                                {% image 'img/img_thumb_1.png' %}
+                                                    <img src="{{ asset_url }}" alt="Be Kula" />
+                                                {% endimage %}
+                                                <a href="{{ path('kulashare_product_show',{'id': item.id })}}">Item {{ item.Id }}</a>
+                                            </li>                                            
+                                        {% endfor %}                                        
+                                    </ul>
+                                
+                            </div>
+                            <div class="content-item-dashboard" id="favorite-list">
+                                    <div class="item-dash3-subtitle"><p>Favorite List</p></div>
+                                    <ul class="ul-my-list">
+                                        {% for  item in products | slice(3,5) %}
+                                            <li class="col-sm-4 col-xs-4 item-watch-list">
+                                                {% image 'img/img_thumb_1.png' %}
+                                                    <img src="{{ asset_url }}" alt="Be Kula" />
+                                                {% endimage %}
+                                                <a href="{{ path('kulashare_product_show',{'id': item.id })}}">Item {{ item.Id }}</a>
+                                            </li>                                            
+                                        {% endfor %}
+                                    </ul>
+                            </div>
+
+                        </div> <!-- /#item-dashboard-3 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-4">
+                            <div class="title-item-dashboard">
+                                <h3>Community Members</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                    <ul class="community-members-ul">
+                                        <li id="member_1">
+                                        {% image 'img/member_1.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" />
+                                        {% endimage %}
+                                        </li>
+                                        <li id="member_2">
+                                        {% image 'img/member_2.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" />
+                                        {% endimage %}
+                                        </li>
+                                        <li id="member_3">
+                                        {% image 'img/member_3.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" />
+                                        {% endimage %}
+                                        </li>
+                                        <li id="member_4">
+                                        {% image 'img/member_4.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" />
+                                        {% endimage %}
+                                        </li>
+                                        <li id="member_5">
+                                        {% image 'img/member_5.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" />
+                                        {% endimage %}
+                                        </li>
+                                        <li id="member_6">
+                                        {% image 'img/member_6.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" />
+                                        {% endimage %}
+                                        </li>
+                                    </ul>
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <div class="col-sm-6 col-xs-6" id="left-item-footer">
+                                    <a href="#">Prev </a>
+                                </div>
+                                <div class="col-sm-6 col-xs-6" id="right-item-footer">
+                                    <a href="#">Next</a>
+                                </div>
+                            </div>
+                        </div> <!-- /#item-dashboard-4 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-5">
+                            <div class="title-item-dashboard">
+                                <h3>Personal account</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                            {% image 'img/personal_account_img.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" class"img-responsive"  id="personal_account_img" />
+                                        {% endimage %}
+                               
+                                <div class="col-sm-12 column-2" id="account_info">
+                                    <p><span class="span_blue">Member ID: &nbsp;  </span><span>{{ app.user.customer.firstname}} {{ app.user.customer.lastname}}</span></p>
+                                    <p><span>Since:&nbsp;</span><span>{{ app.user.createdAt | date('d/m/Y') }}</span></p>
+                                    <p><span>Followers:&nbsp;</span><span class="span_red">59&nbsp;</span>times</p>
+                                    <p><span class="span_blue">Stars:&nbsp; </span><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+            <i class="glyphicon glyphicon-star"></i></p>
+                                </div>
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <div class="col-sm-6 col-xs-6" id="left-item-footer">
+                                    <a href="{{ path('sylius_user_security_logout') }}">Sign Out </a>
+                                </div>
+                                <div class="col-sm-6 col-xs-6" id="right-item-footer">
+                                    <a href="{{ path('sylius_account_profile_update') }}">Edit Info</a>
+                                </div>
+                            </div>
+                        </div> <!-- /#item-dashboard-5 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-6">
+                            <div class="title-item-dashboard">
+                                <h3>Payment Info</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                <p>Welcome: <span class="span_blue">{{ app.user.customer.firstname}} {{ app.user.customer.lastname}}</span></p>
+                                <p>Payment Type: <span>Visa</span></p>
+                                <p>Card Number: <span>12345678910</span></p>
+                                <p>Expired Date     : <span>9/20</span></p>
+                                <p>Billing Address:</p>
+                                <p>{{ app.user.customer.billingStreetAddress1}}</p>
+                                <p>{{ app.user.customer.city}}, {{ app.user.customer.state}}</p>
+                                <p> {{ app.user.customer.postalCode}} {{ app.user.customer.country}}</p>
+                            </div>
+                            <div class="footer-item-dashboard">
+                                
+                                <a href="#">Edit payment Info</a>
+                            </div>
+                        </div> <!-- /#item-dashboard-6 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-7">
+                            <div class="title-item-dashboard">
+                                <h3>Feedback</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                
+                                <div class="col-sm-3" id="cont-img-feed-back">
+                                    {% image 'img/member_2.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula" class="img-feed-back" />
+                                        {% endimage %}
+                               </div>
+                                <div class="col-sm-9"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit..</p>
+                                <p><span class="span_blue">Sarah Smith</span></p></div>
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <div class="col-sm-6 col-xs-6" id="left-item-footer">
+                                    <a href="#">Prev </a>
+                                </div>
+                                <div class="col-sm-6 col-xs-6" id="right-item-footer">
+                                    <a href="#">Next</a>
+                                </div>
+                            </div>
+                        </div> <!-- /#item-dashboard-7 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-8">
+                            <div class="title-item-dashboard">
+                                <h3>Resolution Center</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                <p><span class="span_blue">Have a problem?</span></p>
+                                <ul class="ul-resol-center">
+                                    <li><p><a href="#">Didn't receive your item?</a></p></li>
+                                    <li><p><a href="#">Receive the wrong item?</a></p></li>
+                                    <li><p><a href="#">Extend your rental?</a></p></li>
+                                </ul>
+
+                                <div class="item-dash8-subtitle"><p>Open Cases</p></div>
+                                 <table style="width:100%;text-align:center;" class="table-resol-center">
+                                  <tbody><tr>
+                                    <th>Case</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                  </tr>
+                                  <tr>
+                                    <td>K0158</td>
+                                    <td>Extend Rental</td>
+                                    <td>Awaiting <br>Respond</td>
+                                  </tr>
+                                </tbody></table> 
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <a href="#">Report a problem</a>
+                            </div>
+                        </div> <!-- /#item-dashboard-8 -->
+                        <div class="col-sm-6 col-md-4 item-dashboard" id="item-dashboard-9">
+                            <div class="title-item-dashboard">
+                                <h3>Messege Center</h3>
+                            </div>
+                            <div class="content-item-dashboard">
+                                <div class="item-dash8-subtitle"><p>Open Cases</p></div>
+                                                             <table style="width:100%;" class="table-messege-center">
+                                                              <tbody><tr>
+                                                                <th>Date</th>
+                                                                <th>From</th>
+                                                                <th>Subject</th>
+                                                              </tr>
+                                                              <tr>
+                                                                <td>5/25/15</td>
+                                                                <td>Sara Smith</td>
+                                                                <td>Extend Rental Request</td>
+                                                              </tr>
+                                                              <tr>
+                                                                <td>5/25/15</td>
+                                                                <td>Sara Smith</td>
+                                                                <td>Extend Rental Request</td>
+                                                              </tr>
+                                                              <tr>
+                                                                <td>5/25/15</td>
+                                                                <td>Sara Smith</td>
+                                                                <td>Extend Rental Request</td>
+                                                              </tr>
+                                                            </tbody></table> 
+                            </div>
+                            <div class="footer-item-dashboard">
+                                <div class="col-sm-6 col-xs-6" id="left-item-footer">
+                                    <a href="#">Delete messeges </a>
+                                </div>
+                                <div class="col-sm-6 col-xs-6" id="right-item-footer">
+                                    <a href="#">View Inbox</a>
+                                </div>
+                            </div>
+                        </div> <!-- /#item-dashboard-9 -->
+
+                        
+                        
+                    </div><!-- left-dashboard -->
+                    <div class="col-sm-3" id="sidebard-dashboard">
+                        <div class="title-item-sidebar" id="title_1"><p>Newly Available Items</p></div>
+                        <div class="item-sidebar" id="item-sidebar-1">
+                            <div class="sub-item-type-1 border-tlr">
+                                <div class="col-sm-3" id="img_thumbnails"><a href="#">
+                                    {% image 'img/img_thumb_1.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  />
+                                        {% endimage %}
+                                </a></div>
+                                <div class="col-sm-9" id="description_available"><a href="#"><p style="font-weight:bold;  font-size: 14px;">Susan’s Bike</p>
+                                <p>$18/day •  touring bike</p></a></div>
+                            </div>
+                            <div class="sub-item-type-2 border-lr">
+                                <div class="col-sm-3" id="img_thumbnails"><a href="#">
+                                {% image 'img/img_thumb_2.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  />
+                                        {% endimage %}
+                              </a></div>
+                                <div class="col-sm-9" id="description_available"><a href="#"><p style="font-weight:bold;  font-size: 14px;">Brian’s Power Drill</p>
+                                <p>$3/hour •  hi-power dril</p></a></div>
+                            </div>
+                            <div class="sub-item-type-3 border-blr">
+                                <div class="col-sm-3" id="img_thumbnails"><a href="#">
+                                {% image 'img/img_thumb_3.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  />
+                                        {% endimage %}
+                                </a></div>
+                                <div class="col-sm-9" id="description_available"><a href="#"><p style="font-weight:bold;  font-size: 14px;">Peter's Laptop</p>
+                                <p>$18/day •  Macbook pro</p></a></div>
+                            </div>
+                        </div><!-- °#item-sidebar-1-->
+                        <div class="title-item-sidebar" id="title_2"><p>My Borrowed Items</p></div>
+                        <div class="item-sidebar" id="item-sidebar-1">
+                            <div class="sub-item-type-1 border-tlr">
+                                <p class="borrowed_item_title">Susan’s Bike</p>
+                                <p style="font-size: 10px;">Borrow : 5/22/2015 &nbsp;&nbsp;&nbsp;   Return : 5/25/2015</p>
+                            </div>
+                            <div class="sub-item-type-2 border-lr">
+                                <p class="borrowed_item_title">Brian’s Power Drill</p>
+                                <p style="font-size: 10px;">Borrow : 5/22/2015 &nbsp;&nbsp;&nbsp;   Return : 5/25/2015</p>
+                            </div>
+                            <div class="sub-item-type-3 border-blr">
+                                <p class="borrowed_item_title">Frank's Chainsaw</p>
+                                <p style="font-size: 10px;">Borrow : 5/22/2015 &nbsp;&nbsp;&nbsp;   Return : 5/25/2015</p>
+                            </div>
+                        </div><!-- °#item-sidebar-1-->
+                        <div class="title-item-sidebar" id="title_3"><p>My Bookmarked Items</p></div>
+                        <div class="item-sidebar" id="item-sidebar-1">
+                            <div class="sub-item-type-1 border-tlr">
+                                <p class="borrowed_item_title">Susan’s Bike</p>
+                                <p style="font-size: 10px;">Borrow : 5/22/2015 &nbsp;&nbsp;&nbsp;   Return : 5/25/2015</p>
+                            </div>
+                            <div class="sub-item-type-2 border-lr">
+                                <p class="borrowed_item_title">Brian’s Power Drill</p>
+                                <p style="font-size: 10px;">Borrow : 5/22/2015 &nbsp;&nbsp;&nbsp;   Return : 5/25/2015</p>
+                            </div>
+                            <div class="sub-item-type-3 border-blr">
+                                <p class="borrowed_item_title">Frank's Chainsaw</p>
+                                <p style="font-size: 10px;">Borrow : 5/22/2015 &nbsp;&nbsp;&nbsp;   Return : 5/25/2015</p>
+                            </div>
+                        </div><!-- °#item-sidebar-1-->
+                        <div class="title-item-sidebar" id="title_4"><p>My Favorite Lenders</p></div>
+                        <div class="item-sidebar" id="item-sidebar-1">
+                            <div class="sub-item-type-1 border-tlr">
+                                <div class="col-sm-3" id="img_thumbnails"><a href="#">
+                                    {% image 'img/member_1_thumbnail.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  />
+                                        {% endimage %}
+                                        </a></div>
+                                                            <div class="col-sm-9" id="landers"><a href="#"><p style="font-weight:bold;  font-size: 14px;">Susan York</p>
+                                                            <p><span>Lend:&nbsp;</span><span class="span_red">59&nbsp;</span>times <i class="glyphicon glyphicon-star"></i> <i class="glyphicon glyphicon-star"></i></p></a></div>
+                            </div>
+                            <div class="sub-item-type-2 border-blr">
+                                <div class="col-sm-3" id="img_thumbnails"><a href="#">
+                                     {% image 'img/member_2_thumbnail.png' %}
+                                            <img src="{{ asset_url }}" alt="Be Kula"  />
+                                        {% endimage %}
+                                </a></div>
+                                                            <div class="col-sm-9" id="landers"><a href="#"><p style="font-weight:bold;  font-size: 14px;">Sarah Smith</p>
+                                                        <p><span>Lend:&nbsp;</span><span class="span_red">19&nbsp;</span>times <i class="glyphicon glyphicon-star"></i> <i class="glyphicon glyphicon-star"></i></p></a></div>
+                            </div>
+
+                        </div><!-- °#item-sidebar-1-->
+                    </div> <!-- sidebard-dashboard -->
+                </div>
+        
+    </div>
+{% endblock%}

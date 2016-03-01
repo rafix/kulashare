@@ -1,0 +1,3 @@
+kulashare_frontend_homepage:
+    path:     /about-us
+    defaults: { _controller: KulashareFrontendBundle:Default:index }

@@ -1,0 +1,31 @@
+<div class="in-sec in-sec6">
+	<div class="in-eightsec">
+		<div class="in-eightsec1">
+			 {% for  item in products | slice(0,4) %}
+			 	
+			 	<div class="in-eightelement col-lg-3 col-md-3 col-sm-6 col-xs-6" 
+			 	style="background-image: url('{{ item.image ? item.image.path : asset('img/logo-ks.png') }}'); background-size: auto 100%;">
+		 
+				{# <img src=""  alt="{{ item.name }}" class="img-responsive" /> #}
+			
+					<div class="in-eigthbottom">
+					<p class="in-eightbottomp1">{{item.name}}</p>
+						<p class="in-eightbottomp2">${{(item.price/100)  |number_format(2, '.', ',')}}/day </p>
+					</div>
+				</div>
+			 {% endfor %}
+		</div>
+		<div class="in-eightsec2">
+			 {% for  item in products | slice(4,4) %}
+			 	<div class="in-eightelement col-lg-3 col-md-3 col-sm-6 col-xs-6"
+			 	style="background-image: url('{{ item.image ? item.image.path : asset('img/logo-ks.png') }}'); background-size: auto 100%;">
+					 {# <img src="{{ item.image ? item.image.path : asset('img/logo-ks.png') }}"  alt="{{ item.name }}" class="img-responsive"/> #}
+					<div class="in-eigthbottom">
+						<p class="in-eightbottomp1">{{item.name}}</p>
+						<p class="in-eightbottomp2">${{ (item.price/100) |number_format(2, '.', ',')}}/day </p>
+					</div>
+				</div>
+			 {% endfor %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% set settings = sylius_settings_all('sylius_general') %}
+<html>
+    <head>
+        <title>
+            {% block title %}
+                {{ settings.title|default('sylius.meta.frontend_title'|trans) }}
+            {% endblock %}
+        </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="{{ settings.meta_description|default('sylius.meta.frontend_description'|trans) }}">
+        <meta name="keywords" content="{{ settings.meta_keywords|default('sylius.meta.frontend_keywords'|trans) }}">
+
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="../img/favicon.png">
+
+        {# stylesheets... #}
+        {% block stylesheets %} {% endblock %}
+        
+        {# javascripts... #}
+        {% block javascripts %} {% endblock %}
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body class="page-id-1 socialr" id="dashboard-page">
+    <div class="in-back navbar-fixed-top">
+        <div class="in-sec1">
+            <div class="in-sec">
+            
+            
+                <!--{# if app.user #}<div class="masthead pull-right">
+                    {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                </div>
+                <div class="locale-menu masthead pull-right">
+                    {{ knp_menu_render('sylius.frontend.locale', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                </div>
+                <div class="currency-menu masthead pull-right">
+                    {{ knp_menu_render('sylius.frontend.currency', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                </div>{# else #}-->       
+            
+                {{ include('KulashareFrontendBundle:Default:_nav.html.twig') }}
+                   
+            </div>
+            <!--Nav{# endif #}-->
+        </div>
+    </div>
+
+    
+
+
+    {% if settings.tracking_code %}
+        {{ settings.tracking_code|raw }}
+    {% endif %}
+        
+
+        <!-- Page view Content -->
+        <div class="container">
+            {% block flashes %}
+            {% for type in ['success', 'error', 'notice'] %}
+                {% for flash in app.session.flashbag.get(type) %}
+                    <div class="alert alert-{{ type == 'error' ? 'danger' : type == 'notice' ? 'warning' : type }}">
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                        {{ flash|trans }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+        {{ include('KulashareFrontendBundle:Default:_nav.html.twig') }}
+    </body>
+
+</html>

@@ -1,0 +1,5 @@
+kulashare_customer_homepage:
+    path: /dashboard
+    methods: [GET]
+    defaults: { _controller: KulashareCustomerBundle:Customer:customerProfile }
+

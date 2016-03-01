@@ -1,0 +1,84 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block content %}
+	<div class="container wrap-rental-listing" style="max-width:860px;">
+	
+	
+	<ul class="nav nav-pills">
+	  <li class="active"><a href="#my-rentals" data-toggle="tab">Inbox</a></li>
+	  <li><a href="#my-request-rentals" data-toggle="tab">Sent</a></li>
+	 
+	</ul>
+
+	<div class="tab-content">
+	  <div id="my-rentals" class="tab-pane active">
+	    <table class="table table-striped">
+			  <thead>
+			  	<tr>
+			  		<th>ID</th>
+			  		<th>Sender</th>
+			  		<th>Subject</th>
+			  		<th>Sent At</th>
+			  		<th>Status</th>
+			  		<th></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  	{% for item in messages if item.userReceiver.id == app.user.id %}
+			  	<tr>
+					<td>{{item.id}}</td>
+					<td>{{item.author}}</td>
+					<td>{{item.subject}}</td>
+					<td>{{item.createdAt |date('Y-m-d')}}</td>
+					<td>{{item.state}}</td>
+			  		<td>
+			  			
+			  			<a href="{{ path('kulashare_message_show', { 'id': item.id }) }}" class="btn btn-primary">
+						    <i class="glyphicon glyphicon-eye-open"></i>
+						</a>
+						<a href="{{ path('kulashare_message_delete', { 'id': item.id, 'user_id': app.user.id }) }}" class="btn btn-danger">
+						    <i class="glyphicon glyphicon-remove"></i>
+						</a>
+						
+			  		</td>
+			  	</tr>
+			  	{% endfor %}
+			  </tbody>
+		</table>
+	  </div>
+	  <div id="my-request-rentals" class="tab-pane fade">
+		<table class="table table-striped">
+			  <thead>
+			  	<tr>
+			  		<th>ID</th>
+			  		<th>Sender</th>
+			  		<th>Subject</th>
+			  		<th>Sent At</th>
+			  		<th>Status</th>
+			  		<th></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  	{% for item in messages if item.author.id == app.user.id %}
+			  	<tr>
+			  		<td>{{item.id}}</td>
+			  		<td>{{item.author}}</td>
+			  		<td>{{item.subject}}</td>
+			  		<td>{{item.createdAt |date('Y-m-d')}}</td>
+			  		<td>{{item.state}}</td>
+			  		<td>
+			  		
+			  			<a href="{{ path('kulashare_message_show', { 'id': item.id }) }}" class="btn btn-primary">
+						    <i class="glyphicon glyphicon-eye-open"></i>
+						</a>	
+						
+			  		</td>
+			  	</tr>
+			  	{% endfor %}
+			  </tbody>
+		</table>
+	  </div>
+		  
+	</div>
+		
+	</div>
+{% endblock %}

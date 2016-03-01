@@ -1,0 +1,51 @@
+kulashare_message_inbox:
+    path: /inbox
+    methods: [GET]
+    defaults:
+        _controller: kulashare.controller.message:indexAction
+        _sylius:
+            template:  KulashareMessageBundle:Default:list.html.twig
+            repository:
+                method:    findMessagesByUser
+                arguments: ['expr:service("security.context").getToken().getUser().getId()']
+            paginate:  false
+            limit: 30
+#            sortable:  true
+            permission: false
+#            sorting:
+#                createdAt: desc
+
+api_message:
+    resource: kulashare.message
+    type: sylius.api
+
+kulashare_message_create:
+    path: /message/new
+    methods: [GET, POST]
+    defaults:
+        _controller: kulashare.controller.message:createAction
+        _sylius:
+            form: kulashare_bundle_messagebundle_message
+            permission: false
+            redirect: kulashare_message_show
+            template: KulashareMessageBundle:Default:_form.html.twig
+
+kulashare_message_delete:
+    path: /message/{id}
+    methods: [DELETE, GET]
+    defaults:
+        _controller: kulashare.controller.message:deleteAction
+        _sylius:
+            permission: false
+            redirect: 
+                route: kulashare_message_inbox
+
+
+kulashare_message_show:
+    path: /message/show/{id}
+    methods: [GET]
+    defaults:
+        _controller: kulashare.controller.message:showAction
+        _sylius:
+            template:  KulashareMessageBundle:Default:show.html.twig
+            permission: false

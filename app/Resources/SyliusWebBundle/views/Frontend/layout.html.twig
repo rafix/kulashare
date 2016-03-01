@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+{% set settings = sylius_settings_all('sylius_general') %}
+<html>
+    <head>
+        <title>
+            {% block title %}
+                {{ settings.title|default('sylius.meta.frontend_title'|trans) }}
+            {% endblock %}
+        </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="{{ settings.meta_description|default('sylius.meta.frontend_description'|trans) }}">
+        <meta name="keywords" content="{{ settings.meta_keywords|default('sylius.meta.frontend_keywords'|trans) }}">
+
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+
+        {# stylesheets... #}
+        {% block stylesheets %}
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
+            {% stylesheets 
+                'assets/compiled/frontend.css'
+                'bundles/syliusweb/css/frontend.css'
+                'bundles/syliusweb/css/blueimp-gallery.css'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+            {% endstylesheets %}
+            {% if is_granted('ROLE_SYLIUS_ADMIN') %}
+                {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+            {% endif %}
+            {# stylesheet kulashare... #}
+            {% stylesheets 'js/layerslider/css/layerslider.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            
+                <link rel="stylesheet" href="{{ asset('css/style-index.css') }}" type="text/css" />
+
+           
+            
+        {% endblock %}
+        {# javascripts... #}
+        {% block javascripts %}
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+            {% javascripts
+                 'assets/compiled/frontend.js'
+                 'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
+                'bundles/syliusweb/js/confirm-modal.js'
+                'bundles/syliusweb/js/frontend.js'
+                 'bundles/syliusweb/js/form-spinner.js'
+                  'bundles/syliusweb/js/select2.js'
+                'bundles/syliusweb/js/form-collection.js'
+                'bundles/syliusresource/js/form-collection.js'
+            %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+             {% javascripts 'js/layerslider/js/greensock.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+             {% javascripts 'js/layerslider/js/layerslider.transitions.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            {% javascripts 'js/layerslider/js/layerslider.kreaturamedia.jquery.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+           {% endjavascripts %}
+            
+                <script type="text/javascript" src="{{ asset('js/fn.js') }}"></script>
+           
+            
+        {% endblock %}
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    {% block body %}    
+    <body class="page-id-1 socialr" id="dashboard-page">
+    {% endblock %}
+
+    <div class="in-back navbar-fixed-top">
+        <div class="in-sec1">
+            <div class="in-sec">
+            
+            
+                <!--{# if app.user #}<div class="masthead pull-right">
+                    {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                </div>
+                <div class="locale-menu masthead pull-right">
+                    {{ knp_menu_render('sylius.frontend.locale', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                </div>
+                <div class="currency-menu masthead pull-right">
+                    {{ knp_menu_render('sylius.frontend.currency', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                </div>{# else #}-->       
+            
+                <nav class="navbar navbar-default nav-pri">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button aria-expanded="true" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="{{ path('sylius_homepage') }}">
+                                {% image 'img/logo.png' %}
+                                    <img src="{{ asset_url }}" alt="Kulashare"/>
+                                {% endimage %}
+                            </a>
+                            <ul class="nav navbar-nav navbar-right visible-sm">
+                                <li class="in-divtop1"><a href="{{ path('kulashare_store_front_homepage') }}">Find an Item</a></li>
+                                 {% if app.user %} 
+                                <li class="in-divtop2"><a href="{{ path('kulashare_product_list') }}">List Your Item</a></li>
+                                 {% endif %}
+                            </ul>
+                        </div>
+                        <div style="" aria-expanded="true" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-left1">
+                                <li class="dropdown">
+                                    <a aria-expanded="false" href="{{ path('sylius_about') }}" data-toggle="dropdown" class="dropdown-toggle" role="button" >About us<span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+
+                                        <li><a href="{{ path('sylius_about') }}">Team Kula</a></li>
+                                        <li><a href="{{ path('sylius_mission') }}">Mission</a></li>
+                                    </ul>                                   
+                                </li>
+                                <li class="dropdown">
+                                    <a role="button" href="{{ path('sylius_faqs') }}" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false" >How it works<span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        
+                                        <li><a href="{{ path('sylius_faqs') }}">F.A.Q.'s</a></li>
+                                        <li><a href="{{ path('kulashare_responsability') }}">Social Responsibility</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="dropdown">
+                                    <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="http://kulaforum.org">Community <span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li ><a href="http://kulaforum.org">Blog</a></li>
+                                        <li><a href="http://kulaforum.org/topics/">Forum</a></li>
+                                    </ul>
+                                </li>
+
+                                {% if app.user %} 
+                                    <!-- put the sylius options menu-->
+                                     <li class="in-lastli in-lastli1 dropdown"><a href="#">Dashboard <span class="caret"></span></a>
+                                        <ul role="menu" class="dropdown-menu">
+                                        <li ><a href="{{ path('kulashare_customer_homepage')}}">Dashboard</a></li>
+                                        <li ><a href="{{ path('kulashare_lender_dashboard')}}">Lender Dashboard</a></li>
+                                    <li><a href="{{ path('kulashare_product_list') }}">List My Items</a></li>
+                                        <li><a href="{{ path('kulashare_rental_list') }}">Rentals</a></li>
+                                        <li><a href="{{ path('sylius_user_security_logout') }}">Sign out</a></li>
+                                        </ul>
+                                     </li>
+                                {% else %}
+                                    <li class="in-lastli in-lastli1"><a href="#" data-toggle="modal" data-target="#EasyRegisterModal">Sign up</a></li>
+                                <li class="in-lastli in-lastli2"><a href="{{ path('sylius_user_security_login') }}">Login</a></li>
+                                {% endif %}
+                                    </ul>   
+                                
+                            <ul class="nav navbar-nav navbar-right visible-md visible-lg">
+                                <li class="in-divtop1"><a href="{{ path('kulashare_store_front_homepage') }}">Find an Item</a></li>
+                                 {% if app.user %} 
+                                <li class="in-divtop2"><a href="{{ path('kulashare_product_list') }}">List Your Item</a></li>
+                                 {% endif %}
+                            </ul>
+                             {% block header %}
+                            <div class="masthead pull-right">
+                                {#{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }#}
+                            </div>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </nav>  
+                   
+            </div>
+            <!--Nav{# endif #}-->
+        </div>
+    </div>
+
+    
+
+
+    {% if settings.tracking_code %}
+        {{ settings.tracking_code|raw }}
+    {% endif %}
+        
+
+        <!-- Page view Content -->
+        <!-- <div class="container"> -->
+            {% block flashes %}
+            {% for type in ['success', 'error', 'notice'] %}
+                {% for flash in app.session.flashbag.get(type) %}
+                    <div class="alert alert-{{ type == 'error' ? 'danger' : type == 'notice' ? 'warning' : type }}">
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                        {{ flash|trans }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+
+       <!--  </div> -->
+
+        <div class="in-sec9">
+            <div class="in-sec">
+                <div class="in-titlew1">
+                {% image 'img/title-light1.png' %}
+                    <img src="{{ asset_url }}" alt="Be Kula"/>
+                {% endimage %}
+                    
+                </div>
+                <div class="in-titlew2">
+                {% image 'img/movement.png' %}
+                    <img src="{{ asset_url }}" alt="Be Kula"/>
+                {% endimage %}
+                   
+                </div>
+                <form accept-charset="UTF-8" action="https://dz241.infusionsoft.com/app/form/process/fe11b5410e27d9192508636217a6458a" class="infusion-form" method="POST">
+                <input name="inf_form_xid" type="hidden" value="fe11b5410e27d9192508636217a6458a" />
+    <input name="inf_form_name" type="hidden" value="Indicate interest" />
+    <input name="infusionsoft_version" type="hidden" value="1.48.0.48" />
+                <div class="in-inputcont">
+                    <input type="text" name="inf_field_FirstName" autocomplete="off" value="" placeholder="First Name" class="in-field">
+                    <input type="text"  name="inf_field_Email" autocomplete="off" value="" placeholder="Email Address" class="in-field">
+                    <input type="submit" value="SIGN UP" class="in-submit">
+                </div>
+                </form>
+                <script type="text/javascript" src="https://dz241.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=dadfcd857cc80cc248cddd9786032b4c"></script>
+            </div>
+        </div>
+
+        <div class="in-sec10">
+            <div class="in-sec hidden-xs">
+                <div class="in-lastsec col-lg-3 col-sm-3">
+                    <h3>Connect</h3>
+                    <div class="in-iconcont">
+                          <a href="//www.twitter.com/kulashare" alt="twitter">{% image 'img/icon1.png' %}
+                    <img src="{{ asset_url }}" alt="icon 1"/>
+                {% endimage %}</a>
+                        <a href="//www.facebook.com/kulashare" alt="facebook">{% image 'img/icon2.png' %}
+                    <img src="{{ asset_url }}" alt="icon 2"/>
+                {% endimage %}</a>
+                        <a href="//www.linkedin.com/company/kulashare-inc" alt="linkedin">{% image 'img/icon3.png' %}
+                    <img src="{{ asset_url }}" alt="icon 3"/>
+                {% endimage %}</a>
+                        <a href="//www.instagram.com/kulashare" alt="instagram">{% image 'img/icon4.png' %}
+                    <img src="{{ asset_url }}" alt="icon 4"/>
+                {% endimage %}</a>
+                        <a href="#" alt="youtube">{% image 'img/icon5.png' %}
+                    <img src="{{ asset_url }}" alt="icon 5"/>
+                {% endimage %}</a>
+                        <a href="https://plus.google.com/118429386186180569954" alt="google">{% image 'img/icon6.png' %}
+                    <img src="{{ asset_url }}" alt="icon 6"/>
+                {% endimage %}</a>
+                    </div>
+                </div>
+                <div class="in-lastsec col-lg-9 col-sm-9">
+                    <div class="in-lastcol col-lg-3 col-sm-3">
+                        <h3>About</h3>
+                         <ul>
+                            <li><a href="{{ path('sylius_mission') }}">Mission</a></li>
+                           <!--  <li><a href="#">Vision</a></li> -->
+                            <li><a href="{{ path('sylius_about') }}">Team Kula</a></li>
+                           <!--  <li><a href="#">Terms / Privacy</a></li>
+                            <li><a href="/kulashare.com/faqs/">FAQ</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="in-lastcol col-lg-3 col-sm-3">
+                        <h3>Learn</h3>
+                        <ul>
+                            <li><a href="{{ path('sylius_faqs') }}">F.A.Q</a></li>
+                             <li><a href="{{ path('kulashare_responsability') }}">Social Responsibility</a></li>
+                        </ul>
+                    </div>
+                    <div class="in-lastcol col-lg-3 col-sm-3">
+                         <h3>Updates</h3>
+                        <ul>
+                           <li><a href="//kulaforum.org">Blog</a></li>
+                            <li><a href="//kulaforum.org/topics/">Kulaforum</a></li>
+                        </ul>
+                    </div>
+                    <div class="in-lastcol col-lg-3 col-sm-3">
+                       <h3>Find us</h3>
+                        <ul>
+                            <li><a href="mailto:info@kulashare.com">Email</a></li>
+                            <!-- <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Address</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="in-sec in-sec10b visible-xs">
+                <div class="in-lastcol">
+                    <div class="in-lastsec col-xs-6">
+                        <h3>Connect</h3>
+                        <div class="in-iconcont">
+                             <a href="//www.twitter.com/kulashare" alt="twitter">{% image 'img/icon1.png' %}
+                    <img src="{{ asset_url }}" alt="icon 1"/>
+                {% endimage %}</a>
+                        <a href="//www.facebook.com/kulashare" alt="facebook">{% image 'img/icon2.png' %}
+                    <img src="{{ asset_url }}" alt="icon 2"/>
+                {% endimage %}</a>
+                        <a href="//www.linkedin.com/company/kulashare-inc" alt="linkedin">{% image 'img/icon3.png' %}
+                    <img src="{{ asset_url }}" alt="icon 3"/>
+                {% endimage %}</a>
+                        <a href="//www.instagram.com/kulashare" alt="instagram">{% image 'img/icon4.png' %}
+                    <img src="{{ asset_url }}" alt="icon 4"/>
+                {% endimage %}</a>
+                        <a href="#" alt="youtube">{% image 'img/icon5.png' %}
+                    <img src="{{ asset_url }}" alt="icon 5"/>
+                {% endimage %}</a>
+                        <a href="https://plus.google.com/118429386186180569954" alt="google">{% image 'img/icon6.png' %}
+                    <img src="{{ asset_url }}" alt="icon 6"/>
+                {% endimage %}</a>
+                        </div>
+                    </div>
+                    <div class="in-lastsec col-xs-6">
+                        <h3>About</h3>
+                         <ul>
+                            <li><a href="{{ path('sylius_mission') }}">Mission</a></li>
+                           <!--  <li><a href="#">Vision</a></li> -->
+                            <li><a href="{{ path('sylius_about') }}">Team Kula</a></li>
+                           <!--  <li><a href="#">Terms / Privacy</a></li>
+                            <li><a href="/kulashare.com/faqs/">FAQ</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="in-lastsec col-xs-6">
+                        <h3>Learn</h3>
+                        <ul>
+                            <li><a href="{{ path('sylius_faqs') }}">F.A.Q</a></li>
+                             <li><a href="{{ path('kulashare_responsability') }}">Social Responsibility</a></li>
+                           <!--  <li><a href="#">Tutorials</a></li>
+                            <li><a href="#">Media Center</a></li> -->
+                            
+                        </ul>
+                    </div>
+                    <div class="in-lastsec col-xs-6">
+                        <h3>Updates</h3>
+                        <ul>
+                            <li><a href="//kulaforum.org">Blog</a></li>
+                            <li><a href="//kulaforum.org/topics/">Kulaforum</a></li>
+                           <!--  <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">Latest</a></li>
+                            <li><a href="#">Articles</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="in-lastsec col-xs-6">
+                        <h3>Find us</h3>
+                        <ul>
+                            <li><a href="#">Email</a></li>
+                            <!-- <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Address</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <!-- Modal content-->
+            <div id="EasyRegisterModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="modal-body col-sm-12">
+                            <div class="col-md-offset-1 col-md-10">
+                              {{ render(url('sylius_user_registration', {'template': 'SyliusWebBundle:Frontend/User:registerModal.html.twig'})) }}
+                            </div>
+                        </div>
+                         <div class="modal-footer"></div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="footer">
+            <p class="hidden-xs text-center">© 2016  <a href="//kulashare.com" class="in-flink">kulashare™</a>  All rights reserved  |  <a href="#" class="in-flink">Privacy Policy</a>  | <a href="#" class="in-flink">Terms of Use</a>  |  powered by <a href="//enfusionize.com" class="in-flink">enfusionize™</a></p>
+            <p class="visible-xs text-center">© 2016  <a href="//kulashare.com" class="in-flink">kulashare™</a><br>All rights reserved  |<a href="#" class="in-flink">Privacy Policy</a>  |  <a href="#" class="in-flink">Terms of Use<br></a>powered by <a href="//enfusionize.com" class="in-flink">enfusionize™</a></p>
+        </div>
+    </body>
+
+</html>

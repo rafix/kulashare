@@ -1,0 +1,26 @@
+Kulashare\Bundle\MessageBundle\Entity\Message:
+    exclusion_policy: ALL
+    xml_root_name: message
+    properties:
+        id:
+            expose: true
+            type: integer
+            xml_attribute: true
+        state:
+            expose: true
+            type: string
+        author:
+            expose: true
+        userReceiver:
+            expose: true
+        subject:
+            expose: true
+        comment:
+            expose: true
+            type: textarea
+        createdAt:
+            expose: true
+            type: DateTime
+        updatedAt:
+            expose: true
+            type: DateTime

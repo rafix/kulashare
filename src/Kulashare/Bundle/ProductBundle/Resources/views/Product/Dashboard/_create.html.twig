@@ -1,0 +1,59 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+    <form action="{{ path('kulashare_product_create') }}" method="post" "{{ form_enctype(form) }}" class="form-horizontal" >
+     <fieldset class="well">
+        {{ form_errors(form) }}
+        
+
+        {{ form_row(form.masterVariant.sku) }}
+        {{ form_row(form.masterVariant.price) }}
+        {{ form_row(form.masterVariant.pricingCalculator) }}
+        {{ form_row(form.masterVariant.onHand) }}
+
+        {{ form_row(form.translations, {'attr': {'class': 'input-lg'}}) }}
+
+<div class="form-group">
+            <label class="col-lg-2 control-label required">Categories</label>
+        </div>
+        {% for child in form.taxons %}
+          {{ form_row(child) }}
+        {% endfor %}
+
+        
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label required">Status</label>
+        </div>
+            {% for type in form.status %}
+                {{ form_row(type) }}
+            {% endfor %}
+
+        
+
+        {{ form_row(form.typeRental) }}
+
+        {{ form_row(form.latitud) }}
+
+        {{ form_row(form.longitud) }}
+
+
+
+
+        {{ form_widget(form._token) }}
+ 
+
+           </fieldset>
+        
+        <div class="form-actions clearfix">
+        <button class="btn btn-success btn-lg" type="submit">
+            <i class="icon-user"></i>
+            Save
+        </button>
+    </div>
+         </form>
+    </div>
+</div>
+{% endblock %}

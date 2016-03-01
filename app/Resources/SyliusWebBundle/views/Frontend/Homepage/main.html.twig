@@ -1,0 +1,635 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block content %}
+
+
+ <!-- ======================== Carousel ================================ -->
+		 <div class="">
+		 	<div id="myCarousel" class="carousel slide">
+		 		<div class="carousel-inner" style="width:100%;height:750px; margin:0 auto; text-align:center">
+		 			<div class="item ls-slide" data-ls="slidedelay:5000;transition2d:92;timeshift:-1000;">
+
+		 				<!--<div class="in-sec2">-->
+		 				{% image 'img/slide-img1.jpg'  %}
+		 				<img src="{{ asset_url }}" class="ls-l img_bg_slide" alt="Slide background"  data-ls="offsetxin:0;durationin:3600;easingin:easeOutQuad;rotatein:-35;scalexin:2;scaleyin:2;offsetxout:0;durationout:1500;rotateout:35;scalexout:2;scaleyout:2;"/>
+		 				{% endimage %}
+		 				<!--<div class="in-sec">-->
+		 				<h1 class="ls-l ls-preloaded in-bannertitle" id="in-bannertitle1" data-ls="offsetxin:0;durationin:3000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">Make Money<br>By Lending<br>Items Locally</h1>
+		 				<!-- <a href="" class="in-bannerbtn"> -->
+		 				<div class="in-bannercont ls-l ls-preloaded" id="in-bannercont1" data-ls="offsetxin:0;durationin:300;delayin:2500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;" data-toggle="modal" data-target=".bs-example-modal-sm">
+		 					
+		 					{% image 'img/play.png'  %}
+                                    <img src="{{ asset_url }}" alt="Play"/>
+                                {% endimage %}
+		 					<p>SEE HOW IT WORKS </p>
+
+		 				</div>
+		 				
+		 				<div class="in-banner ls-l ls-preloaded" id="in-banner1">
+		 					<!-- </a> -->
+		 					{% image 'img/blanck-circle.png' %}
+                                    <img src="{{ asset_url }}"  class="in-bannerimg" id="in-bannerimg1" style="position:relative;" data-ls="offsetxin:0;durationin:2000;delayin:400;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+                                {% endimage %}
+		 				</div>
+		 				<!--</div>-->
+		 				<!--</div> -->
+		 			</div>
+		 			<div class="item ls-slide" data-ls="slidedelay:5000;transition2d:92;timeshift:-1000;">
+
+		 				<!-- <div class="in-sec2"> -->
+		 				{% image 'img/slide-img2.jpg'  %}
+                                    <img src="{{ asset_url }}" alt="Play" class="ls-l img_bg_slide" alt="Slide background" data-ls="offsetxin:0;durationin:1500;delayin:1500;rotateyin:90;transformoriginin:right 50% 0;offsetxout:0;durationout:1500;showuntil:1000;rotateyout:-90;transformoriginout:right 50% 0;" />
+                                {% endimage %}
+		 				
+		 				<h1 class="ls-l ls-preloaded in-bannertitle " id="in-bannertitle2" id="item_text_peers" data-ls="durationin:1500;delayin:900;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">Save Time<br>& Money<br>Borrowing Items<br>From Your<br>Peers</h1>
+		 				
+		 				<div class="in-bannercont ls-l ls-preloaded" id="in-bannercont2" data-ls="offsetxin:0;durationin:300;delayin:2500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;" data-toggle="modal" data-target=".bs-example-modal-sm">
+		 					
+		 					{% image 'img/play.png'  %}
+                                    <img src="{{ asset_url }}" alt="Play" />
+                                {% endimage %}
+		 					<p>SEE HOW IT WORKS </p>
+		 				</div>
+		 				<div class="in-banner ls-l ls-preloaded" id="in-banner2">
+		 				{% image 'img/blanck-circle.png'  %}
+		 				 <img src="{{ asset_url }}"	id="in-bannerimg2" class="in-bannerimg" id="item_img_peers" style="position:relative;" data-ls="offsetxin:0;durationin:2000;delayin:400;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+		 				{% endimage %}
+		 				</div>	
+		 			</div> 
+		 			
+		 			<div class="item ls-slide" data-ls="slidedelay:5000;transition2d:92;timeshift:-1000;">
+		 				<!-- <div class="in-sec2"> -->
+		 				{% image 'img/slide-img3.jpg'  %}
+                                    <img src="{{ asset_url }}" class="ls-l img_bg_slide" alt="Slide background" data-ls="offsetxin:right;durationin:4000;easingin:easeOutQuart;fadein:false;rotatein:20;scalexin:1.2;scaleyin:1.2;offsetxout:0;offsetyout:bottom;durationout:1000;fadeout:false;"/>
+		 				{% endimage %}
+		 				<h1 class="ls-l ls-preloaded in-bannertitle"  id="in-bannertitle3" data-ls="offsetxin:0;durationin:3000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">Share Value<br>with a<br>Community Built<br>on Trust</h1>
+		 				
+		 				<div class="in-bannercont ls-l ls-preloaded" id="in-bannercont3" data-ls="offsetxin:0;durationin:300;delayin:2500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;" data-toggle="modal" data-target=".bs-example-modal-sm">
+		 					{% image 'img/play.png'  %}
+                                    <img src="{{ asset_url }}" />
+		 					{% endimage %}
+		 					<p>SEE HOW IT WORKS </p>
+		 				</div>
+		 				<div class="in-banner ls-l ls-preloaded" id="in-banner3">
+		 				{% image 'img/blanck-circle.png'  %}
+                                    <img src="{{ asset_url }}" class="in-bannerimg"  id="in-bannerimg3" style="position:relative;" data-ls="offsetxin:0;durationin:2000;delayin:400;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+		 				{% endimage %}
+		 				</div>
+		 				<!-- </div>  -->
+		 			</div>	 	
+		 			<div class="item ls-slide" data-ls="slidedelay:5000;transition2d:92;timeshift:-1000;">
+
+		 				<!-- <div class="in-sec2"> -->
+		 				{% image 'img/slide-img4.jpg'  %}
+                                    <img src="{{ asset_url }}" class="ls-l img_bg_slide" alt="Slide background" data-ls="offsetxin:0;durationin:2000;scalexin:1.1;scaleyin:1.1;offsetxout:0;"/>
+		 				{% endimage %}
+		 				<h1 class="ls-l ls-preloaded in-bannertitle"  id="in-bannertitle4" data-ls="durationin:1500;delayin:900;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">Join The<br>Movement</h1>
+		 				
+		 				<div class="in-bannercont ls-l ls-preloaded"  id="in-bannercont4" data-ls="offsetxin:0;durationin:300;delayin:2500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;" data-toggle="modal" data-target=".bs-example-modal-sm">
+		 					{% image 'img/play.png'  %}
+                                    <img src="{{ asset_url }}" />
+		 					{% endimage %}
+		 					<p>SEE HOW IT WORKS </p>
+		 				</div>
+		 				<div class="in-banner ls-l ls-preloaded" id="in-banner4">		
+		 				{% image 'img/blanck-circle.png' %}
+                                <img src="{{ asset_url }}" class="in-bannerimg" id="in-bannerimg4" style="position:relative;" data-ls="offsetxin:0;durationin:2000;delayin:400;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+		 				{% endimage %}
+		 				</div>	
+		 			</div> 
+		 			<div class="item ls-slide" data-ls="slidedelay:5000;transition2d:92;timeshift:-1000;">
+
+		 				<!-- <div class="in-sec2"> -->
+		 				{% image 'img/slide-img0.jpg'  %}
+                                    <img src="{{ asset_url }}" class="ls-bg img_bg_slide" alt="Slide background"/>
+		 				{% endimage %}
+		 				<h1 class="ls-l ls-preloaded in-bannertitle"  id="in-bannertitle5" data-ls="durationin:1500;delayin:900;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">We Are<br>The Sharing<br>Economy<span>&#8482;</span></h1>
+		 				
+		 				<div class="in-bannercont ls-l ls-preloaded"  id="in-bannercont5" data-ls="offsetxin:0;durationin:300;delayin:2500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;" data-toggle="modal" data-target=".bs-example-modal-sm"> 
+		 					{% image 'img/play.png'  %}
+                                    <img src="{{ asset_url }}" />
+		 					{% endimage %}
+		 					<p>SEE HOW IT WORKS </p>
+		 				</div>
+		 				<div class="in-banner ls-l ls-preloaded" id="in-banner5">
+		 				{% image 'img/desk.png'  %}
+                            <img src="{{ asset_url }}" class="in-bannerimg" id="in-bannerimg5" style="position:relative;" data-ls="offsetxin:0;durationin:2000;delayin:400;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+		 				{% endimage %}
+		 				</div>	
+		 			</div> 				 			
+		 		</div>
+		 		<!-- Controls -->
+		 		<!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="fa fa-chevron-left fa-2x"></span></a>
+		 		<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="fa fa-chevron-right fa-2x"></span></a>
+		 	</div> -->
+		 	<!-- /.carousel --> 
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					     <div class="modal-body">
+					                     <video width="620" height="440" controls>
+					                      <source src="{{ asset('video/kula_audio_4.mp4') }}" type="video/mp4">
+					                     
+					                    Your browser does not support the video tag.
+					                    </video> 
+					                </div>
+					                
+					                
+					       
+					    </div>
+					  </div>
+				</div>
+		 </div> 
+		</div>	
+		<div class="in-sec3">
+			<div class="in-sec">
+				<div class="in-blue in-blue2 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="in-blueright">
+						<div class="in-bluea">
+							<p class="in-bluet1">MEMBERS</p>
+							<p class="in-bluet2">453</p>
+							<p class="in-bluet3">Since Feb 2015</p>
+						</div>
+						<div class="in-blueb">
+							<p class="in-bluet1">ITEMS SHARED</p>
+							<p class="in-bluet2">1,678</p>
+							<p class="in-bluet3">Rent and Lease-to-own</p>
+						</div>
+						<div class="in-bluec">
+							<p class="in-bluet1">MONEY SAVED</p>
+							<p class="in-bluet2">$152,450</p>
+							<p class="in-bluet3">Total of cost from rent or lease</p>
+						</div>
+					</div>
+				</div>
+				<div class="in-blue in-blue1 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="in-bluesec1">
+					{% image 'img/face.png'  %}
+                            <img src="{{ asset_url }}" />
+						{% endimage %}
+					</div>
+					<div class="in-bluesec2">
+						<p class="in-bluet4">&#8220;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&#8221;</p>
+						<p class="in-bluet5">JOHN DOE</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="in-sec4">
+			<div class="in-sec">
+				<h1 class="in-lighttitle">HOW IT WORKS</h1>
+				<!-- <img class="in-sixelement" src="img/all6.png"> -->
+			    <div class="slider-fade-container">
+                    <div class="container container-sliderw">
+                        <div id="myCarousel" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">           
+                                <div class="item ls-slide" data-ls="slidedelay:4000;transition2d:92;timeshift:-1000;">
+                                {% image 'img/slider_how/how_back.png'  %}
+                            <img src="{{ asset_url }}" class="ls-l img_bg_slidels-preloaded" alt="Slide background">
+                                    {% endimage %}
+                                    <div class="ls-l ls-preloaded" id="how_div1" data-ls="offsetxin:0;durationin:300;delayin:500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text1" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div2" data-ls="offsetxin:0;durationin:300;delayin:700;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img2" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text2" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div3" data-ls="offsetxin:0;durationin:300;delayin:900;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img3" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text3" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div4" data-ls="offsetxin:0;durationin:300;delayin:1100;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img4" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text4" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div5" data-ls="offsetxin:0;durationin:300;delayin:1300;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text5" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div6" data-ls="offsetxin:0;durationin:300;delayin:1500;easingin:easeInOutQuad;scalexin:1.1;scaleyin:1.1;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img6" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text6" />
+					 					{% endimage %}
+					 				</div>
+                                </div>
+                                <div class="item ls-slide" data-ls="slidedelay:4000;transition2d:92;timeshift:-1000;">
+                                    <img src="img/slider_how/how_back.png" class="ls-l img_bg_slidels-preloaded" alt="Slide background">
+                                    <div class="ls-l ls-preloaded" id="how_div1" data-ls="offsetxin:0;durationin:2000;delayin:500;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text1" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div2" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+					 					<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img2" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text2" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div3" data-ls="offsetxin:0;durationin:2000;delayin:1300;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img3" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text3" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div4" data-ls="offsetxin:0;durationin:2000;delayin:1100;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img4" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text4" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div5" data-ls="offsetxin:0;durationin:2000;delayin:900;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text5" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div6" data-ls="offsetxin:0;durationin:2000;delayin:700;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img6" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text6" />
+					 					{% endimage %}
+					 				</div>
+                                </div>
+                                <div class="item ls-slide" data-ls="slidedelay:4000;transition2d:92;timeshift:-1000;">
+                                    <img src="img/slider_how/how_back.png" class="ls-l img_bg_slidels-preloaded" alt="Slide background">
+                                    <div class="ls-l ls-preloaded" id="how_div1" data-ls="durationin:1500;delayin:1200;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text1" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div2" data-ls="durationin:1500;delayin:700;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img2" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text2" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div3" data-ls="durationin:1500;delayin:700;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img3" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text3" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div4" data-ls="durationin:1500;delayin:1200;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img4" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text4" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div5" data-ls="durationin:1500;delayin:1700;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text5" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div6" data-ls="durationin:1500;delayin:1700;rotatein:20;rotatexin:30;scalexin:1.5;scaleyin:1.5;transformoriginin:left 50% 0;durationout:750;rotateout:20;rotatexout:-30;scalexout:0;scaleyout:0;transformoriginout:left 50% 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img6" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text6" />
+					 					{% endimage %}
+					 				</div>
+                                </div>
+                                <div class="item ls-slide" data-ls="slidedelay:4000;transition2d:92;timeshift:-1000;">
+                                    <img src="img/slider_how/how_back.png" class="ls-l img_bg_slidels-preloaded" alt="Slide background">
+                                    <div class="ls-l ls-preloaded" id="how_div1" data-ls="offsetxin:0;durationin:500;delayin:500;easingin:easeInOutQuad;scalexin:3;scaleyin:3;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text1" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div2" data-ls="offsetxin:0;durationin:500;delayin:850;easingin:easeInOutQuad;scalexin:3;scaleyin:3;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img2" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text2" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div3" data-ls="offsetxin:0;durationin:500;delayin:1200;easingin:easeInOutQuad;scalexin:3;scaleyin:3;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img3" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text3" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div4" data-ls="offsetxin:0;durationin:500;delayin:1550;easingin:easeInOutQuad;scalexin:3;scaleyin:3;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img4" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text4" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div5" data-ls="offsetxin:0;durationin:500;delayin:1200;easingin:easeInOutQuad;scalexin:3;scaleyin:3;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text5" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div6" data-ls="offsetxin:0;durationin:500;delayin:850;easingin:easeInOutQuad;scalexin:3;scaleyin:3;offsetxout:0;durationout:1000;scalexout:0.9;scaleyout:0.9;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img6" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text6" />
+					 					{% endimage %}
+					 				</div>
+                                </div>
+                                <div class="item ls-slide" data-ls="slidedelay:4000;transition2d:92;timeshift:-1000;">
+                                    <img src="img/slider_how/how_back.png" class="ls-l img_bg_slidels-preloaded" alt="Slide background">
+                                    <div class="ls-l ls-preloaded" id="how_div1" data-ls="offsetxin:0;durationin:2000;delayin:1550;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 50%;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text1.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text1" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div2" data-ls="offsetxin:0;durationin:2000;delayin:1200;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 50%;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img2" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text2.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text2" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div3" data-ls="offsetxin:0;durationin:2000;delayin:850;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 50%;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img3" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text3.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text3" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div4" data-ls="offsetxin:0;durationin:2000;delayin:500;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 50%;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 				 {% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img4" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text4.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text4" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div5" data-ls="offsetxin:0;durationin:2000;delayin:850;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 50%;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 					{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img1" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text5.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text5" />
+					 					{% endimage %}
+					 				</div>
+					 				<div class="ls-l ls-preloaded" id="how_div6" data-ls="offsetxin:0;durationin:2000;delayin:1200;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 50%;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">
+					 				{% image 'img/slider_how/how_circ.png'  %}
+                            			<img src="{{ asset_url }}" class="how-circ" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_img6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_img6" />
+					 					{% endimage %}
+					 					{% image 'img/slider_how/how_text6.png'  %}
+                            			<img src="{{ asset_url }}" class="how_text6" />
+					 					{% endimage %}
+					 				</div>
+                                </div>
+
+                            </div>          
+                                   <!--  <div class="carousel-controls">
+                                      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-angle-double-left fa-lg prev-nextw">‹</i></a>
+                                      <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-angle-double-right fa-lg prev-nextw">›</i></a>
+                                    </div> -->
+                        </div>   
+                    </div>
+                </div>
+			</div>
+		</div>
+<div class="in-sec5">
+			<div class="in-sec">
+				<div class="in-graycont">
+					<form method="GET" action="{{path('kulashare_product_search')}}">
+					<div class="in-gray">
+						<input type="text" autocomplete="off"  name="search" value="" placeholder="What would you like to rent?" class="in-field">
+						<input type="submit" value="SEARCH" class="in-submit">
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+<!-- productos -->		
+{{ render(controller('KulashareStoreFrontBundle:HomePage:recentProducts')) }} 
+<div class="in-sec in-sec7">
+			<div class="in-featbody col-sm-12 col-md-4 col-lg-4">			
+				<div class="in-featcont">
+					<h2>POPULAR SEARCHES</h2>
+					{% image 'img/feature1.png'  %}
+                        <img src="{{ asset_url }}" alt="featured"/>
+					{% endimage %}
+					<ul>
+						<li>Bicycles</li>
+						<li>Leaf Blowers</li>
+						<li>Dolly</li>
+						<li>Videocameras</li>
+					</ul>
+					<a href="{{ path('kulashare_store_front_homepage') }}" class="btn btn-info">MORE ITEMS</a>
+				</div>
+			</div>
+			<div class="in-featbody col-sm-12 col-md-4 col-lg-4">
+				<div class="in-featcont">
+					<h2>COMMUNITY EVENTS</h2>
+					{% image 'img/feature2.png'  %}
+                        <img src="{{ asset_url }}" alt="featured" />
+                        {% endimage %}
+					<ul>
+						<li>Earth Day Fair, <a class="in-flink" href="#">April 22nd</a></li>
+						<li>Harrington Farmer's Market, <a class="in-flink" href="#">March 7</a></li>
+						<li>Austin BBQ Festival, <a class="in-flink" href="#">May 25th</a></li>
+						<li>Memorial Day Parade and Fete, <a class="in-flink" href="#">May 22nd</a></li>
+					</ul>
+					<a href="//kulaforum.org" class="btn btn-info">MORE ITEMS</a>
+				</div>
+			</div>
+			<div class="in-featbody col-sm-12 col-md-4 col-lg-4">
+				<div class="in-featcont">
+					<h2>TRENDING TOPICS</h2>
+					{% image 'img/feature3.png'  %}
+                        <img src="{{ asset_url }}" alt="featured" />
+					{% endimage %}
+					<ul>
+						<li><a class="in-flink" href="#">#sharingEconomy</a> Twitter Feed</li>
+						<li>Huffington Post : _____</li>
+						<li><a class="in-flink" href="#">#peopleRock</a> Twitter Feed</li>
+						<li><a class="in-flink" href="#">#collaborativeConsumption</a> Twitter Feed</li>
+					</ul>
+					<a href="//kulaforum.org/topics" class="btn btn-info">MORE ITEMS</a>
+				</div>
+			</div>
+		</div>
+		<div class="in-sec8">
+			<div class="in-sec">
+				<div class="in-commblock hidden-xs">
+					<div class="in-commh1">
+						<h1>Welcome to the</h1>
+					</div>
+					<div class="in-commlogo">
+					{% image 'img/logo-bot.png'  %}
+                        <img src="{{ asset_url }}" alt="kulashare">
+					{% endimage %}
+					</div>
+				</div>
+				<div class="visible-xs in-commblock-xs">
+					<div class="in-commh1 in-commh1b">
+						<h1>Welcome to the</h1>
+					</div>
+					<div class="in-commh1 in-commh1c">
+						<div>
+						{% image 'img/logo-bot.png'  %}
+                        <img src="{{ asset_url }}" alt="kulashare">
+						{% endimage %}
+						</div>
+					</div>
+				</div>
+				{% image 'img/community.png'  %}
+				 <img src="{{ asset_url }}" alt="community"/>
+				{% endimage %}
+				<h1>We Are The Sharing Economy<span>&#8482;</span></h1>
+				<p>We are THE go-to place for people to rent and lease-to-own items within the context of community around growing the Sharing Economy. To make a positive impact both in the lives of members and those served through partnerships and causes that make a difference that <a class="in-flink" href="#">kulashare&#8482;</a> aligns itself with.</p>
+			</div>
+		</div>
+{% endblock %}

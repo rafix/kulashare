@@ -1,0 +1,84 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<div class="in-sec8">
+            <div class="in-sec panel panel-default wrap-produc-new">
+	
+{% if(update)  %}
+	<form id="product_form" action="{{path('kulashare_product_update', {'id' : id})}}" method="post" {{ form_enctype(form) }} class="form-horizontal" >
+	
+{% else %}
+	<form id="product_form" action="{{ path('kulashare_product_create') }}" method="post" {{ form_enctype(form) }}  >
+{% endif %}
+{% image 'img/product-listing-banner.jpg' %}
+		    <img class="img-responsive" style="max-width:860px; width: 100%" src="{{ asset_url }}" alt="Product banner"/>
+        {% endimage %}
+	 <fieldset class="well">
+	 <div class="form-group">
+		
+	</div>
+		{{ form_errors(form) }}
+		
+
+		{{ form_widget(form.masterVariant.sku, { 'attr': {'class': 'hidden', required: 'false'}  } )}}
+		{{ form_row(form.masterVariant.price) }}
+		{{ form_row(form.typeRental) }}
+		{{ form_widget(form.masterVariant.pricingCalculator, { 'attr': {'class': 'hidden'}}) }}
+		{{ form_row(form.masterVariant.onHand) }}
+		{# <div style="width: 91%;margin: 0 auto;"> #}
+		{#{ form_row(form.masterVariant.availableOn) }#}
+		{{ form_row(form.translations) }}
+		
+		{# </div> #}
+
+
+		{% for child in form.taxons %}
+		  {{ form_row(child) }}
+		{% endfor %}
+
+		
+
+		<!--
+		<div class="form-group">
+            <label class="col-lg-2 control-label required">Status</label>
+        </div> -->
+            
+            {#for type in form.status#}
+                {# form_row(type) #}
+            {#endfor #}
+            
+
+		
+
+		
+
+		{{ form_widget(form.latitud, {'value': lat }) }}
+
+		{{ form_widget(form.longitud, {'value': long }) }}
+
+		{{ form_row(form.status) }}
+{% include 'SyliusWebBundle:Backend/Product/Form:_images_form.html.twig' %}
+
+		{{ form_widget(form._token) }}
+		<div class="hidden">
+
+</div>
+		   </fieldset>
+ 
+		
+		<div class="form-actions clearfix">
+		<button type="submit" onclick="$('#product_form').attr('target', '_blank');" class="btn btn-info btn-lg" formaction="{{ path('kulashare_product_preview') }}">
+            <i class="glyphicon glyphicon-eye-open"></i>
+            Preview
+        </button>
+        <button class="btn btn-success btn-lg" type="submit" onclick="$('#product_form').attr('target', '');">
+            <i class="icon-user"></i>
+            Save
+        </button>
+    </div>
+		 </form>
+
+</div>
+</div>
+{% endblock %}
+

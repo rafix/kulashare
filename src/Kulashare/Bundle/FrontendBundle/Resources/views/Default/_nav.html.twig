@@ -1,0 +1,64 @@
+<nav class="navbar navbar-default nav-pri">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button aria-expanded="true" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="{{ path('sylius_homepage') }}">
+                                {% image 'img/logo.png' %}
+                                    <img src="{{ asset_url }}" alt="Kulashare"/>
+                                {% endimage %}
+                            </a>
+                        </div>
+                        <div style="" aria-expanded="true" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-left1">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About us<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="http://kulashare.com/about.php">About Us</a></li>
+                                        <li><a href="http://kulashare.com/community-page/">Community Page</a></li>
+                                        <li><a href="http://kulashare.com/faqs/">Faq's</a></li>
+                                        <li><a href="http://kulashare.com/mission-vision/">Mission/Vision</a></li>
+                                        <li><a href="http://kulashare.com/social-responsiblity/">Social Responsiblity</a></li>
+                                        <!-- <li><a href="http://kulashare.com/">Epsilon</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">How it works<span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="#">How it works</a></li>
+                                    </ul>
+                                </li>
+                                <li >
+                                    <a href="http://kulaforum.org">Community</a>
+                                </li>
+
+                                {% if app.user %} 
+                                    <!-- put the sylius options menu-->
+                                     <li class="in-lastli in-lastli1 dropdown"><a href="#">Dashboard <span class="caret"></span></a>
+                                        <ul role="menu" class="dropdown-menu">
+                                        <li ><a href="{{ path('kulashare_customer_homepage')}}">Dashboard</a></li>
+                                        <li><a href="{{ path('kulashare_product_add') }}">Add New Product</a></li>
+                                        <li><a href="{{ path('kulashare_product_list') }}">List My Items</a></li>
+                                        <li><a href="{{ path('sylius_user_security_logout') }}">Sign out</a></li>
+                                        </ul>
+                                     </li>
+                                {% else %}
+                                    <li class="in-lastli in-lastli1"><a href="{{ path('sylius_user_registration') }}">Sign up</a></li>
+                                <li class="in-lastli in-lastli2"><a href="{{ path('sylius_user_security_login') }}">Login</a></li>
+                                {% endif %}
+                                    </ul>   
+                                
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="in-divtop1"><a href="{{ path('kulashare_store_front_homepage') }}">Find an Item</a></li>
+                                 {% if app.user %} 
+                                <li class="in-divtop2"><a href="{{ path('kulashare_product_list') }}">List Your Item</a></li>
+                                 {% endif %}
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </nav>  

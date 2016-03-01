@@ -1,0 +1,62 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="text-center">New Message</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="col-sm-6 col-sm-offset-3">
+   
+        <div class="well">
+            <form method="post" action="{{path('kulashare_message_create')}}" class="form-horizontal" {{ form_enctype(form) }} >
+                {{ form_errors(form) }}
+                <div class="form-group col-sm-12">
+                    <label for="choiceAuthor" class="col-sm-2 control-label">{{ form_label(form.author) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_errors(form.author) }}
+                        {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="choiceReceiver" class="col-sm-2 control-label">{{ form_label(form.userReceiver) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_errors(form.userReceiver) }}
+                        {{ form_widget(form.userReceiver, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="inputSubject" class="col-sm-2 control-label">{{ form_label(form.subject) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_errors(form.subject) }}
+                        {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="inputComment" class="col-sm-2 control-label">{{ form_label(form.comment) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_errors(form.comment) }}
+                        {{ form_widget(form.comment, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="inputState" class="col-sm-2 control-label">{{ form_label(form.state) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_errors(form.state) }}
+                        {{ form_widget(form.state, {'attr': {'class': 'form-control'}}) }}
+                         {{ form_rest(form) }}
+                    </div>
+                </div>
+                   <div class="hidden">
+                   
+                    </div>
+                    <div class=" col-sm-offset-4 col-sm-4">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Submit
+                    </button>
+                    </div>
+            </form>
+</div>
+</div>
+</div>
+{% endblock %}

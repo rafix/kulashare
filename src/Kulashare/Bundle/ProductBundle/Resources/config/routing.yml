@@ -1,0 +1,42 @@
+kulashare_product_add:
+    path:     /products/new
+    defaults: { _controller: KulashareProductBundle:Product:newProduct }
+kulashare_product_create:
+    path:     /ksproductcreate
+    defaults: { _controller: KulashareProductBundle:Product:createProduct }
+kulashare_product_list:
+    path:     /products/list
+    defaults: 
+      _controller: KulashareProductBundle:Product:listProduct 
+      _sylius:
+            paginate: 5
+kulashare_product_show:
+    path:     /products/view/{id}
+    defaults: { _controller: KulashareProductBundle:Product:showProduct }
+kulashare_product_preview:
+    path:     /products/preview
+    defaults: { _controller: KulashareProductBundle:Product:showPreview }
+kulashare_product_filter_category:
+    path:     /products/category/{categoryId}
+    defaults: { _controller: KulashareProductBundle:Product:filterProductByCategory }
+kulashare_product_search:
+    path:     /products-search/
+    methods:  [GET]
+    defaults: { _controller: KulashareProductBundle:Product:productSearch }
+kulashare_product_edit:
+    path:     /products/edit/{id}
+    defaults: { _controller: KulashareProductBundle:Product:editProduct}
+kulashare_product_update:
+    path:     /products/update/{id}
+    defaults: { _controller: KulashareProductBundle:Product:updateProduct}
+kulashare_product_delete:
+    path:     /products/delete/{id}
+    defaults: { _controller: KulashareProductBundle:Product:deleteProduct }
+kulashare_product_filter:
+    path:     /products-filter/
+    methods:  [GET]
+    defaults: { _controller: KulashareProductBundle:Product:filterProduct }
+kulashare_product_lender:
+    path:     /listing-product/
+    methods:  [GET]
+    defaults: { _controller: KulashareProductBundle:Product:productSearchbyLender }

@@ -1,0 +1,128 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('css/about-style.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<div class="banner-top">
+		<div class="banner-body">
+			
+			{% image 'img/banner-about.png'  %}
+				 <img src="{{ asset_url }}" />
+				{% endimage %}
+		</div>
+	</div>
+	<div class="about-cont">
+		<div class="head-aboutcont">
+			<div class="head-about1">	
+				<h1 class="in-lighttitle">ABOUT KULASHARE</h1>
+			</div>
+			<div class="head-about2">
+			</div>
+		</div>
+		<div class="body-aboutcont">
+			<div class="body-about">
+				<p>We are THE go-to place for people to rent and lease-to-own items within the context of community around growing the Sharing Economy. To make a positive impact both in the lives of members and those served through partnerships and causes that make a difference that <a class="in-flink" href="{{ path('sylius_homepage') }}">kulashare&trade;</a> aligns itself with.
+				</p>
+			</div>
+			<div class="body-about">
+				<div class="body-abouta">
+					
+					<p><a href="{{ path('sylius_homepage') }}" class="in-flink">kulashare&trade;</a> is a sharing economy platform where people can make transactions with one another, learn about the sharing economy, post news and information about things they have to rent or borrow, share “how to’s”, and, most importantly, kulashare™ is a vehicle for community-building.</p>
+
+ 	<p>We have created this sharing economy site to enable individuals to enhance their lives via increased access to goods for the equal purposes of making and saving money.  Our intent is also to showcase the value of sharing and collaborating in order improve quality of life, particularly for the middle class.</p>
+
+<p>We believe that if people who live in reasonable proximity to one another begin to engage in these kinds of helpful, mutually beneficial, safe, and convenient exchanges, they--and we--will begin to build stronger communities. And when we build stronger communities, we, the people, have more relationships, more support, and more access to goods and services as a result of these new connections.  We become more trusting of one another and we have richer, more fortified lives. #peoplerock</p>
+      
+     	<p><a href="{{ path('sylius_homepage') }}" class="in-flink">kulashare&trade;</a> is part of the sharing economy. As you may begin to read more about it, the sharing economy encompasses many ideas and principles.  It is centered around putting idle resources to use for mutual benefit. I have an extension ladder and you don’t; I’ll rent mine to you so you have access to the ladder for your house project.  Or, you have a truck, and I need a truck to pick up some lumber I ordered.  I rent your truck so I can do the pickup and delivery. </p>
+ 
+     	<p>The sharing economy works when people are willing to share what they have. There are many examples of people making a satisfying living out of doing this full time!  While it is cool that this occurs, it is not why we created <a href="{{ path('sylius_homepage') }}" class="in-flink">kulashare&trade;</a>.</p>
+
+	<p><a href="{{ path('sylius_homepage') }}" class="in-flink">kulashare&trade;</a> (“kula” means community in Sanskrit) works in a democratic sort of way.  We Are the Sharing Economy.  The platform is about us, it is for us, and it is evolved by us. Every member has a role to play in building and maintaining our standards of respect, acknowledgment, and recognition. We will be as strong and as successful as each member allows us to be.  </p>
+ 
+     	<p>The platform exists so that those who choose to rent items can make money and those who want to borrow can save time and money. When this activity happens on a big scale, communities are built up and strengthened. Other collaborative ideas for sharing may arise.  And once that starts happening, these individual transactions are what starts to change your community and change the world. </p>
+ 
+     	<p>Join our community forum where you can engage in discussion, find definitions, best practices, articles from elsewhere on the internet, and news from other kulashare™ members.</p>
+				</div>
+				<div class="body-aboutb">
+					<h2>MARKET APPROACH <br>AND STRATEGY:</h2>
+					<ul>
+						<li>Launch initially with business to business in one market with rental (beta).</li>
+						<li>Then add in lease / purchase option b2b.</li>
+						<li>Follow with expanding to b2c and then c2c with rental and leasing.</li>
+						<li>Begin a national expansion with rental model.</li>
+						<li>Lease purchase option will be rolled out state by state with a focus on the major cities.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="about-cont">
+		<div class="head-aboutcont">
+			<div class="head-about1">
+				<h1 class="in-lighttitle">TEAM KULASHARE</h1>
+			</div><div class="head-about2"></div>
+		</div>
+		<div class="body-about">
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+					
+				 <img src="{{ asset('img/peter-avatar.png') }}" />
+				
+					<h3>Peter Gantner</h3>
+					<p>CEO, Founder.<br>Serial Entrepreneur.</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+					<img src="{{ asset('img/inriel-avatar.png') }}" />
+					<h3>Inriel, Salvador Romero</h3>
+					<p>CTO, Founding member.<br>Site Architect &#38; developing<br>strategic positioning in the<br>marketplace</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+					<img src="{{ asset('img/paula-avatar.png') }}" />
+					<h3>Paula Thomas</h3>
+					<p>Chief Copywriter,<br>Founding member.<br>High level strategy and<br>conversion copywriting.</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+				<img src="{{ asset('img/conrad-avatar.png') }}" />
+					<h3>Conrad Julian</h3>
+					<p>CTO. Manage a crew of<br>12 developers.</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+					<img src="{{ asset('img/dewi-avatar.png') }}" />
+					<h3>Dewi Maile Lim</h3>
+					<p>Chief Brand Cheerleader.<br>Engagement<br>&#38; Movement strategy.</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+					<img src="{{ asset('img/brian-avatar.png') }}" />
+					<h3>Brian Berger</h3>
+					<p>Founding member.</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+					<img src="{{ asset('img/yaan-avatar.png') }}" />
+
+					<h3>Yaan Gulledge</h3>
+					<p>Brand Identity.</p>
+				</div>
+			</div>
+			<div class="testimonial-about col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<div class="testimonial-about-center">
+				<img src="{{ asset('img/david-avatar.png') }}" />
+					<h3>David Gantner</h3>
+					<p>Director Field.<br>Marketing.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    kulashare_store_front.example:
+#        class: Kulashare\Bundle\StoreFrontBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

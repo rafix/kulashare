@@ -1,0 +1,33 @@
+sylius_user:
+    driver: doctrine/orm
+    classes:        
+        customer:
+            model: Kulashare\Bundle\CustomerBundle\Entity\Customer # Your custom Custmer entity.    
+
+sylius_product:
+    driver: doctrine/orm
+    classes:
+        product:
+            model: Kulashare\Bundle\ProductBundle\Entity\Product           
+            form:
+                default: Kulashare\Bundle\ProductBundle\Form\Type\ProductType
+            translation:
+                model: Kulashare\Bundle\ProductBundle\Entity\ProductTranslation
+                form:
+                    default: Kulashare\Bundle\ProductBundle\Form\Type\ProductTranslationType
+
+sylius_variation:
+    classes:
+        product:
+            variant:                
+                form:
+                    default: Kulashare\Bundle\ProductBundle\Form\Type\ProductVariantType
+
+sylius_resource:
+    resources:
+        kulashare.message:
+            driver: doctrine/orm
+            classes:
+                model: Kulashare\Bundle\MessageBundle\Entity\Message
+                repository: Kulashare\Bundle\MessageBundle\Entity\MessageRepository
+                controller: Kulashare\Bundle\MessageBundle\Controller\DefaultController

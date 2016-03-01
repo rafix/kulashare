@@ -1,0 +1,33 @@
+kulashare_rental_avaible:
+    path:     /product-available
+    defaults: { _controller: KulashareRentalBundle:Default:available }
+kulashare_rental_save:
+    path:     /rental-save
+    defaults: { _controller: KulashareRentalBundle:Default:saveRental}
+kulashare_rental_list:
+    path:     /rental-listing
+    defaults: { _controller: KulashareRentalBundle:Default:listRental}
+kulashare_rental_aproved:
+    path:     /rental-aproved
+    defaults: { _controller: KulashareRentalBundle:Default:approveRental}
+kulashare_rental_reject:
+    path:     /rental-reject
+    defaults: { _controller: KulashareRentalBundle:Default:rejectRental}
+kulashare_rental_checkout:
+    path:     /rental-checkout
+    defaults: { _controller: KulashareRentalBundle:Default:checkoutRental}
+kulashare_rental_list_dashboar:
+    path:     /dashboard
+    defaults: { _controller: KulashareRentalBundle:Default:listRentalDashboard}
+kulashare_lender_dashboard:
+    path:     /lender/dashboard
+    defaults: { _controller: KulashareRentalBundle:Default:listRentalDashboard}
+kulashare_extend_rental:
+    path:     /kulashare_extend_rental
+    defaults: { _controller: KulashareRentalBundle:Default:extendRental}
+alert_notification:
+    path:     /alert_notification
+    defaults: { _controller: KulashareRentalBundle:Default:returnAlertRental}
+kulashare_rental_finished:
+    path:     /rental-finish
+    defaults: { _controller: KulashareRentalBundle:Default:finalizeRental}

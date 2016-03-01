@@ -1,0 +1,125 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block content %}
+	<div class="container wrap-rental-listing" style="max-width:860px;">
+	<img class="img-responsive" src="{{ asset('img/rentals.jpg') }}" alt="Product banner"/>
+	
+	<ul class="nav nav-pills">
+	  <li class="active"><a href="#my-rentals" data-toggle="tab">My Rentals</a></li>
+	  <li><a href="#my-request-rentals" data-toggle="tab">My Request Rentals</a></li>
+	  <li><a href="#my-request-expired" data-toggle="tab">My Rentals Expired</a></li>
+	</ul>
+
+	<div class="tab-content">
+	  <div id="my-rentals" class="tab-pane active">
+	    <table class="table table-striped">
+			  <thead>
+			  	<tr>
+			  		<th>ID</th>
+			  		<th>Product</th>
+			  		<th>User Rental</th>
+			  		<th>Start</th>
+			  		<th>End</th>
+			  		<th>Status</th>
+			  		<th></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  	{% for item in rental %}
+			  	<tr>
+			  		<td>{{item.id}}</td>
+			  		<td>{{item.product.shortDescription}}</td>
+			  		<td>{{item.userRental.firstname}} {{item.userRental.lastname}}</td>			  		
+			  		<td>{{item.startDate |date('Y-m-d') }}</td>
+			  		<td>{{item.endDate |date('Y-m-d') }}</td>
+			  		<td>{{item.rentalState}}</td>
+			  		<td>
+			  			{% if item.rentalState == "pending" or item.rentalState =="extend" %}
+			  			<a href="{{ path('kulashare_rental_aproved',  {'rental': item.id}) }}" class="btn btn-primary">
+						    <i class="glyphicon glyphicon-ok"></i>
+						</a>
+						<a href="{{ path('kulashare_rental_reject',  {'rental': item.id})}}" class="btn btn-danger">
+						    <i class="glyphicon glyphicon-remove"></i>
+						</a>
+						{% endif %}
+			  		</td>
+			  	</tr>
+			  	{% endfor %}
+			  </tbody>
+		</table>
+	  </div>
+	  <div id="my-request-rentals" class="tab-pane fade">
+		<table class="table table-striped">
+			  <thead>
+			  	<tr>
+			  		<th>ID</th>
+			  		<th>Product</th>
+			  		<th>User Rental</th>
+			  		<th>Start</th>
+			  		<th>End</th>
+			  		<th>Status</th>
+			  		<th></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  	{% for item in request %}
+			  	<tr>
+			  		<td>{{item.id}}</td>
+			  		<td>{{item.product.shortDescription}}</td>
+			  		<td>{{item.userRental.firstname}} {{item.userRental.lastname}}</td>			  		
+			  		<td>{{item.startDate |date('Y-m-d') }}</td>
+			  		<td>{{item.endDate |date('Y-m-d') }}</td>
+			  		<td>{{item.rentalState}}</td>
+			  		<td>
+			  			{% if (item.rentalState == "approved" or item.rentalState == "extended") %}
+			  			<form id="myform" method="post" action="{{ path('sylius_cart_item_add', {'rental_id': item.id, 'id': item.product.id, 'start_date': item.startdate, 'end_date': item.enddate}) }}">
+						  	<button type="submit" class="btn btn-primary">
+						    	Go to Checkout
+							</button>
+						</form>
+			  									
+						{% endif %}
+			  		</td>
+			  	</tr>
+			  	{% endfor %}
+			  </tbody>
+		</table>
+	  </div>
+	  <div id="my-request-expired" class="tab-pane fade">
+		<table class="table table-striped">
+			  <thead>
+			  	<tr>
+			  		<th>Product</th>
+			  		<th>User Rental</th>
+			  		<th>Start</th>
+			  		<th>End</th>
+			  		<th>Status</th>
+			  		<th></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  	{% for item in rental %}
+			  	{% if (item.rentalState == "expired" or item.rentalState == "returned") %}
+			  	<tr>
+			  		<td>{{item.product.shortDescription}}</td>
+			  		<td>{{item.userRental.firstname}} {{item.userRental.lastname}}</td>			  		
+			  		<td>{{item.startDate |date('Y-m-d') }}</td>
+			  		<td>{{item.endDate |date('Y-m-d') }}</td>
+			  		<td>{{item.rentalState}}</td>
+			  		<td>
+			  			{% if item.rentalState == "expired" %}
+			  			<a href="{{ path('kulashare_rental_finished',  {'rental': item.id}) }}" class="btn btn-primary">
+						   Mark as Returned <i class="glyphicon glyphicon-ok"></i>
+						</a>
+			  									
+						{% endif %}
+			  		</td>
+			  	</tr>
+			  	{% endif %}
+			  	{% endfor %}
+			  </tbody>
+		</table>
+	  </div>	  
+	</div>
+		
+	</div>
+{% endblock %}

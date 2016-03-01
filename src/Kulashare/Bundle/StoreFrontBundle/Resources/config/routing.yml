@@ -1,0 +1,3 @@
+kulashare_store_front_homepage:
+    path:     /product-listing/{offset}/{limit}
+    defaults: { _controller: KulashareStoreFrontBundle:Default:index, offset:0,limit:6 }

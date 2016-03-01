@@ -1,0 +1,4 @@
+services:
+#    kulashare_rental.example:
+#        class: Kulashare\Bundle\RentalBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

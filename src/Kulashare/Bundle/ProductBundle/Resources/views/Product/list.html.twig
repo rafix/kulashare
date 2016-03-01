@@ -1,0 +1,68 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+{% block scripts %}		
+	<script>
+		$(".item-lt").hover(function () {
+		    $(this).toggleClass("selected-item");
+		});	
+	</script>
+{% endblock scripts %}
+
+{% block content %}
+	<div class="col-sm-12" id="product-listing-dashboard">
+		<div class="col-sm-12 col-xs-12 search_items_form">
+			<div class="input-group">
+				<input type="hidden" name="search_param" value="all" id="search_param">         
+				<input type="text" class="form-control" name="x" placeholder="Recent items near Phoenix, Arizona">
+				<div class="input-group-btn search-panel">
+					<button data-toggle="dropdown" class="btn btn_drop_category dropdown-toggle" type="button" aria-expanded="false">
+						<span id="search_concept">All Category</span> <span class="caret"></span>
+					</button>
+					<ul role="menu" class="dropdown-menu">
+						<li><a href="#contains">Contains</a></li>
+						<li><a href="#its_equal">It's equal</a></li>
+						<li><a href="#greather_than">Greather than &gt;</a></li>
+						<li><a href="#less_than">Less than &lt; </a></li>
+						<li class="divider"></li>
+						<li><a href="#all">Anything</a></li>
+					</ul>
+				</div>
+				<span class="input-group-btn">
+				    <button type="button" class="btn btn_search_item"><span>SEARCH</span></button>
+				</span>
+			</div>
+		</div>
+
+		<div class="item-container col-xs-12">
+			<!-- Product item -->
+			{% for  item in products  %}
+			<div class="item-lt col-sm-3 col-xs-12">
+				<div class="item-lt-imagen">
+					{% image 'img/img_gallery_bg.png' %}
+                    	<img src="{{ asset_url }}" class="img-responsive" alt="Kulashare"/>
+                    {% endimage %}					
+				</div>
+				<div class="item-lt-description">
+					<p class="title">{{item.name}}</p> 
+					<p class="price"> ${{item.price}}/day</p>
+					<p class="short-desc">{{item.shortDescription}}</p>
+					<p class="distance"><i class="glyphicon glyphicon-map-marker"></i> Less than 1 mile · Arizona</p>
+				</div>
+				<div class="item-lt-footer">
+					<div class="col-sm-3 img-profile">
+						{% image 'img/member_2.png' %}
+	                    	<img src="{{ asset_url }}"  alt="Kulashare"/>
+	                    {% endimage %}							
+					</div>
+					<div class="col-sm-6 name-profile">
+						<p>Susan York </p><p><span class="sp_lender">lender <span class="sp_number_red">35</span> times</span></p>
+					</div>
+					<div class="col-sm-3 search-button">
+						<span class="btn btn-see-all">See All</span>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
