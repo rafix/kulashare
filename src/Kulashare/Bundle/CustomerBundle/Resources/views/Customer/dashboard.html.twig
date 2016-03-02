@@ -202,7 +202,7 @@
                                                                 <th>From</th>
                                                                 <th>Subject</th>
                                                               </tr>
-                                {% for item in messages if item.userReceiver == app.user.id %}
+                                {% for item in messages if item.userReceiver.id == app.user.id %}
                                                               <tr>
                                                                 <td>{{item.createdAt |date('Y-m-d')}}</td>
                                                                 <td>{{item.author.firstname}}</td>
