@@ -5,7 +5,7 @@ namespace Kulashare\Bundle\RentalBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Rentals
+ * Rentals.
  *
  * @ORM\Table(name="kulashare_rentals")
  * @ORM\Entity(repositoryClass="Kulashare\Bundle\RentalBundle\Entity\RentalsRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Rentals
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -21,7 +21,7 @@ class Rentals
      */
     private $id;
 
-/**
+    /**
      * @var Kulashare\Bundle\CustomerBundle\Entity\Customer
      *
      * @ORM\ManyToOne(targetEntity="Kulashare\Bundle\CustomerBundle\Entity\Customer")
@@ -29,7 +29,7 @@ class Rentals
      */
     private $userRental;
 
-/**
+    /**
      * @var Kulashare\Bundle\CustomerBundle\Entity\Customer
      *
      * @ORM\ManyToOne(targetEntity="Kulashare\Bundle\CustomerBundle\Entity\Customer")
@@ -37,7 +37,7 @@ class Rentals
      */
     private $userLender;
 
-/**
+    /**
      * @var Kulashare\Bundle\ProductBundle\Entity\Product
      *
      * @ORM\ManyToOne(targetEntity="Kulashare\Bundle\ProductBundle\Entity\Product")
@@ -45,32 +45,31 @@ class Rentals
      */
     private $product;
 
-/**
+    /**
      * @var datetime
      *
      * @ORM\Column(name="start_date", type="datetime")
      */
     private $start_date;
-/**
-     * @var integer
+    /**
+     * @var int
      *
      * @ORM\Column(name="end_date", type="datetime")
      */
     private $end_date;
 
-/**
+    /**
      * @var string
      *
      * @ORM\Column(name="RentalState", type="string", length=20)
      */
     /*pending,aproved,rejected,completed*/
     private $rental_state;
-  
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -78,7 +77,7 @@ class Rentals
     }
 
     /**
-     * Set startDate
+     * Set startDate.
      *
      * @param \DateTime $startDate
      *
@@ -92,7 +91,7 @@ class Rentals
     }
 
     /**
-     * Get startDate
+     * Get startDate.
      *
      * @return \DateTime
      */
@@ -102,7 +101,7 @@ class Rentals
     }
 
     /**
-     * Set endDate
+     * Set endDate.
      *
      * @param \DateTime $endDate
      *
@@ -116,7 +115,7 @@ class Rentals
     }
 
     /**
-     * Get endDate
+     * Get endDate.
      *
      * @return \DateTime
      */
@@ -126,7 +125,7 @@ class Rentals
     }
 
     /**
-     * Set rentalState
+     * Set rentalState.
      *
      * @param string $rentalState
      *
@@ -140,7 +139,7 @@ class Rentals
     }
 
     /**
-     * Get rentalState
+     * Get rentalState.
      *
      * @return string
      */
@@ -150,7 +149,7 @@ class Rentals
     }
 
     /**
-     * Set userRental
+     * Set userRental.
      *
      * @param \Kulashare\Bundle\CustomerBundle\Entity\Customer $userRental
      *
@@ -164,7 +163,7 @@ class Rentals
     }
 
     /**
-     * Get userRental
+     * Get userRental.
      *
      * @return \Kulashare\Bundle\CustomerBundle\Entity\Customer
      */
@@ -174,7 +173,7 @@ class Rentals
     }
 
     /**
-     * Set userLender
+     * Set userLender.
      *
      * @param \Kulashare\Bundle\CustomerBundle\Entity\Customer $userLender
      *
@@ -188,7 +187,7 @@ class Rentals
     }
 
     /**
-     * Get userLender
+     * Get userLender.
      *
      * @return \Kulashare\Bundle\CustomerBundle\Entity\Customer
      */
@@ -198,7 +197,7 @@ class Rentals
     }
 
     /**
-     * Set product
+     * Set product.
      *
      * @param \Kulashare\Bundle\ProductBundle\Entity\Product $product
      *
@@ -212,7 +211,7 @@ class Rentals
     }
 
     /**
-     * Get product
+     * Get product.
      *
      * @return \Kulashare\Bundle\ProductBundle\Entity\Product
      */

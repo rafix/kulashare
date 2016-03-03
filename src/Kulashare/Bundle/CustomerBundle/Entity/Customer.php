@@ -3,21 +3,17 @@
 namespace Kulashare\Bundle\CustomerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
-use Sylius\Component\Core\Model\CustomerInterface;
 //use Sylius\Component\User\Model\Customer as BaseCustomer;
 use Sylius\Component\Core\Model\Customer as BaseCustomer;
 
 /**
- * Customer
+ * Customer.
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Customer extends BaseCustomer 
+class Customer extends BaseCustomer
 {
-  
-
     /**
      * @var string
      *
@@ -46,22 +42,22 @@ class Customer extends BaseCustomer
      * @var string
      * @ORM\Column(name="state", type="string", length=255)
      */
-    private $state; 
+    private $state;
 
     /**
      * @var string
      * @ORM\Column(name="postalCode", type="string", length=255)
      */
-    private $postalCode;       
+    private $postalCode;
 
     /**
-     * @var integer
+     * @var int
      * @ORM\Column(name="notifyOnLead", type="integer")
      */
     private $notifyOnLead;
 
     /**
-     * @var integer
+     * @var int
      * @ORM\Column(name="notifyOnSale", type="integer")
      */
     private $notifyOnSale;
@@ -72,10 +68,8 @@ class Customer extends BaseCustomer
      */
     private $country;
 
-
-    
     /**
-     * Set phone
+     * Set phone.
      *
      * @param string $phone
      *
@@ -89,7 +83,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get phone
+     * Get phone.
      *
      * @return string
      */
@@ -99,7 +93,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set billingStreetAddress1
+     * Set billingStreetAddress1.
      *
      * @param string $billingStreetAddress1
      *
@@ -113,7 +107,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get billingStreetAddress1
+     * Get billingStreetAddress1.
      *
      * @return string
      */
@@ -122,8 +116,8 @@ class Customer extends BaseCustomer
         return $this->billingStreetAddress1;
     }
 
-     /**
-     * Set billingStreetAddress1
+    /**
+     * Set billingStreetAddress1.
      *
      * @param string $billingStreetAddress1
      *
@@ -137,7 +131,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get billingStreetAddress1
+     * Get billingStreetAddress1.
      *
      * @return string
      */
@@ -147,7 +141,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set city
+     * Set city.
      *
      * @param string $city
      *
@@ -161,7 +155,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get city
+     * Get city.
      *
      * @return string
      */
@@ -171,7 +165,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set state
+     * Set state.
      *
      * @param string $state
      *
@@ -185,7 +179,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get state
+     * Get state.
      *
      * @return string
      */
@@ -195,7 +189,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set postalCode
+     * Set postalCode.
      *
      * @param string $postalCode
      *
@@ -209,7 +203,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get postalCode
+     * Get postalCode.
      *
      * @return string
      */
@@ -219,9 +213,9 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set notifyOnLead
+     * Set notifyOnLead.
      *
-     * @param integer $notifyOnLead
+     * @param int $notifyOnLead
      *
      * @return Customer
      */
@@ -233,9 +227,9 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get notifyOnLead
+     * Get notifyOnLead.
      *
-     * @return integer
+     * @return int
      */
     public function getNotifyOnLead()
     {
@@ -243,9 +237,9 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set notifyOnSale
+     * Set notifyOnSale.
      *
-     * @param integer $notifyOnSale
+     * @param int $notifyOnSale
      *
      * @return Customer
      */
@@ -257,9 +251,9 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get notifyOnSale
+     * Get notifyOnSale.
      *
-     * @return integer
+     * @return int
      */
     public function getNotifyOnSale()
     {
@@ -267,7 +261,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Set country
+     * Set country.
      *
      * @param string $country
      *
@@ -281,7 +275,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Get country
+     * Get country.
      *
      * @return string
      */
@@ -291,7 +285,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Add order
+     * Add order.
      *
      * @param \Sylius\Component\Core\Model\Order $order
      *
@@ -305,7 +299,7 @@ class Customer extends BaseCustomer
     }
 
     /**
-     * Remove order
+     * Remove order.
      *
      * @param \Sylius\Component\Core\Model\Order $order
      */
@@ -313,7 +307,7 @@ class Customer extends BaseCustomer
     {
         $this->orders->removeElement($order);
     }
-    
+
     // public function __toString(){
     //     return $thist->getName();
     // }

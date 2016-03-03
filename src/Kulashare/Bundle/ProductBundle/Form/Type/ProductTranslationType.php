@@ -2,7 +2,6 @@
 
 namespace Kulashare\Bundle\ProductBundle\Form\Type;
 
-
 use Sylius\Bundle\CoreBundle\Form\Type\ProductTranslationType as BaseProductTranslationType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,13 +15,13 @@ class ProductTranslationType extends BaseProductTranslationType
     {
         parent::buildForm($builder, $options);
         $builder->remove('metaKeywords');
-        $builder->remove('metaDescription');        
+        $builder->remove('metaDescription');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Kulashare\Bundle\ProductBundle\Entity\ProductTranslation'
+            'data_class' => 'Kulashare\Bundle\ProductBundle\Entity\ProductTranslation',
         ));
     }
 

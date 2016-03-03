@@ -1,20 +1,20 @@
-<?php 
+<?php
+
 
 namespace Kulashare\Bundle\MessageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Message
+ * Message.
  *
  * @ORM\Table(name="kulashare_messages")
  * @ORM\Entity(repositoryClass="Kulashare\Bundle\MessageBundle\Entity\MessageRepository")
  */
 class Message
-{   
-
+{
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -37,7 +37,7 @@ class Message
      */
     private $userReceiver;
 
-/**
+    /**
      * @var Kulashare\Bundle\CustomerBundle\Entity\Customer
      *
      * @ORM\ManyToOne(targetEntity="Kulashare\Bundle\CustomerBundle\Entity\Customer")
@@ -45,7 +45,7 @@ class Message
      */
     protected $author;
 
-     /**
+    /**
      * @var string
      *
      * @ORM\Column(name="comment", type="string")
@@ -59,10 +59,7 @@ class Message
      */
     protected $state;
 
-    
-    
-
-   /**
+    /**
      * @var datetime
      *
      * @ORM\Column(name="createAt", type="datetime")
@@ -92,10 +89,6 @@ class Message
     {
         return $this->id;
     }
-
-   
-
-   
 
     /**
      * {@inheritdoc}
@@ -133,8 +126,8 @@ class Message
         return $this;
     }
 
-   /**
-     * Get Author
+    /**
+     * Get Author.
      *
      * @return \Kulashare\Bundle\CustomerBundle\Entity\Customer
      */
@@ -144,7 +137,7 @@ class Message
     }
 
     /**
-     * Set Author
+     * Set Author.
      *
      * @param \Kulashare\Bundle\CustomerBundle\Entity\Customer $author
      *
@@ -157,7 +150,7 @@ class Message
         return $this;
     }
     /**
-     * Get userReceiver
+     * Get userReceiver.
      *
      * @return \Kulashare\Bundle\CustomerBundle\Entity\Customer
      */
@@ -167,7 +160,7 @@ class Message
     }
 
     /**
-     * Set Receiver
+     * Set Receiver.
      *
      * @param \Kulashare\Bundle\CustomerBundle\Entity\Customer $userReceiver
      *
@@ -180,7 +173,7 @@ class Message
         return $this;
     }
     /**
-     * Get endDate
+     * Get endDate.
      *
      * @return \DateTime
      */
@@ -190,7 +183,7 @@ class Message
     }
 
     /**
-    * @param \DateTime $createAt
+     * @param \DateTime $createAt
      *
      * @return Message
      */
@@ -202,7 +195,7 @@ class Message
     }
 
     /**
-     * Get endDate
+     * Get endDate.
      *
      * @return \DateTime
      */
@@ -212,11 +205,10 @@ class Message
     }
 
     /**
-    * @param \DateTime $updateAt
+     * @param \DateTime $updateAt
      *
      * @return Message
      */
-
     public function setUpdatedAt(\DateTime $updatedAt)
     {
         $this->updatedAt = $updatedAt;
@@ -255,7 +247,4 @@ class Message
     {
         $this->subject = $subject;
     }
-
-
 }
- ?>

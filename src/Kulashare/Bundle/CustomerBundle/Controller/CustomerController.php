@@ -3,9 +3,7 @@
 namespace Kulashare\Bundle\CustomerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Symfony\Component\HttpFoundation\Request;
-
 
 class CustomerController extends Controller
 {
@@ -15,29 +13,25 @@ class CustomerController extends Controller
     public function customerProfileAction()
     {
         if (!$this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
-            
             return $this->redirect($this->generateUrl('sylius_user_security_login'));
         }
-    	 //find all product for the user logged
+         //find all product for the user logged
         $repositoryProduct = $this->container->get('sylius.repository.product');
 
         $user = $this->getUser();
         $query = $repositoryProduct->createQueryBuilder('p')
             ->where('p.userCreated = :user')
-            ->setParameter('user', $user->getId())    
-            ->orderBy('p.createdAt', 'DESC')        
+            ->setParameter('user', $user->getId())
+            ->orderBy('p.createdAt', 'DESC')
             ->getQuery();
 
         $products = $query->setMaxResults(6)->getResult();
         //print_r(count($products));die;
         $rentals = $em->getRepository('KulashareRentalBundle:Rentals')
-                    ->findAllRentalsFromLender($user->getId() );   
+                    ->findAllRentalsFromLender($user->getId());
         $request_rentals = $em->getRepository('KulashareRentalBundle:Rentals')
-                    ->findAllRentalsFromRent($user->getId() );  
+                    ->findAllRentalsFromRent($user->getId());
 
-        
-        return $this->render('KulashareCustomerBundle:Customer:dashboard.html.twig', array("products" => $products, 'rentals' => $rentals, 'request' => $request_rentals));
+        return $this->render('KulashareCustomerBundle:Customer:dashboard.html.twig', array('products' => $products, 'rentals' => $rentals, 'request' => $request_rentals));
     }
-
-    
 }

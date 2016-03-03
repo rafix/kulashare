@@ -2,24 +2,20 @@
 
 namespace Kulashare\Bundle\ProductBundle\Entity;
 
-use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 use Sylius\Component\Core\Model\User;
-
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Product
+ * Product.
  *
  * @ORM\Table()
  * @ORM\Entity
  */
 class Product extends BaseProduct
 {
-    
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="status", type="integer")
      */
@@ -44,14 +40,12 @@ class Product extends BaseProduct
      *
      * @ORM\Column(name="longitud", type="float")
      */
-    private $longitud;   
+    private $longitud;
 
     /**
      * @var User
      */
     private $userCreated;
-    
-
 
     public function getUserCreated()
     {
@@ -61,16 +55,14 @@ class Product extends BaseProduct
     public function setUserCreated(User $user = null)
     {
         if ($this->userCreated !== $user) {
-            $this->userCreated = $user;            
+            $this->userCreated = $user;
         }
     }
 
-
-
     /**
-     * Set status
+     * Set status.
      *
-     * @param integer $status
+     * @param int $status
      *
      * @return Product
      */
@@ -82,9 +74,9 @@ class Product extends BaseProduct
     }
 
     /**
-     * Get status
+     * Get status.
      *
-     * @return integer
+     * @return int
      */
     public function getStatus()
     {
@@ -92,7 +84,7 @@ class Product extends BaseProduct
     }
 
     /**
-     * Set typeRental
+     * Set typeRental.
      *
      * @param string $typeRental
      *
@@ -106,7 +98,7 @@ class Product extends BaseProduct
     }
 
     /**
-     * Get typeRental
+     * Get typeRental.
      *
      * @return string
      */
@@ -116,7 +108,7 @@ class Product extends BaseProduct
     }
 
     /**
-     * Set latitud
+     * Set latitud.
      *
      * @param float $latitud
      *
@@ -130,7 +122,7 @@ class Product extends BaseProduct
     }
 
     /**
-     * Get latitud
+     * Get latitud.
      *
      * @return float
      */
@@ -140,7 +132,7 @@ class Product extends BaseProduct
     }
 
     /**
-     * Set longitud
+     * Set longitud.
      *
      * @param float $longitud
      *
@@ -154,7 +146,7 @@ class Product extends BaseProduct
     }
 
     /**
-     * Get longitud
+     * Get longitud.
      *
      * @return float
      */
@@ -163,4 +155,3 @@ class Product extends BaseProduct
         return $this->longitud;
     }
 }
-
