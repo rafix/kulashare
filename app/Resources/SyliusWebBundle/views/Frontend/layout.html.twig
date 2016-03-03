@@ -16,9 +16,9 @@
 
         {# stylesheets... #}
         {% block stylesheets %}
-            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
-            {% stylesheets 
+            {% stylesheets
+                'css/bootstrap.min.css'
+                'css/font-awesome.css'
                 'assets/compiled/frontend.css'
                 'bundles/syliusweb/css/frontend.css'
                 'bundles/syliusweb/css/blueimp-gallery.css'
@@ -40,9 +40,9 @@
         {% endblock %}
         {# javascripts... #}
         {% block javascripts %}
-            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-            <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
             {% javascripts
+                'js/jquery.min.js'
+                'js/bootstrap.min.js'
                  'assets/compiled/frontend.js'
                  'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
                 'bundles/syliusweb/js/confirm-modal.js'
@@ -71,7 +71,7 @@
 
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
         <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="{{ asset('js/html5.js') }}"></script>
         <![endif]-->
     </head>
     {% block body %}    
@@ -117,19 +117,19 @@
                         <div style="" aria-expanded="true" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-left1">
                                 <li class="dropdown">
-                                    <a aria-expanded="false" href="{{ path('sylius_about') }}" data-toggle="dropdown" class="dropdown-toggle" role="button" >About us<span class="caret"></span></a>
+                                    <a aria-expanded="false" href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" >About us<span class="caret"></span></a>
                                     <ul role="menu" class="dropdown-menu">
 
-                                        <li><a href="{{ path('sylius_about') }}">Team Kula</a></li>
-                                        <li><a href="{{ path('sylius_mission') }}">Mission</a></li>
+                                        <li><a href="#">Team Kula</a></li>
+                                        <li><a href="#">Mission</a></li>
                                     </ul>                                   
                                 </li>
                                 <li class="dropdown">
-                                    <a role="button" href="{{ path('sylius_faqs') }}" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false" >How it works<span class="caret"></span></a>
+                                    <a role="button" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false" >How it works<span class="caret"></span></a>
                                     <ul role="menu" class="dropdown-menu">
                                         
-                                        <li><a href="{{ path('sylius_faqs') }}">F.A.Q.'s</a></li>
-                                        <li><a href="{{ path('kulashare_responsability') }}">Social Responsibility</a></li>
+                                        <li><a href="#">F.A.Q.'s</a></li>
+                                        <li><a href="#">Social Responsibility</a></li>
                                     </ul>  
                                 </li>
                                 <li class="dropdown">
@@ -260,9 +260,9 @@
                     <div class="in-lastcol col-lg-3 col-sm-3">
                         <h3>About</h3>
                          <ul>
-                            <li><a href="{{ path('sylius_mission') }}">Mission</a></li>
+                            <li><a href="#">Mission</a></li>
                            <!--  <li><a href="#">Vision</a></li> -->
-                            <li><a href="{{ path('sylius_about') }}">Team Kula</a></li>
+                            <li><a href="#">Team Kula</a></li>
                            <!--  <li><a href="#">Terms / Privacy</a></li>
                             <li><a href="/kulashare.com/faqs/">FAQ</a></li> -->
                         </ul>
@@ -270,8 +270,8 @@
                     <div class="in-lastcol col-lg-3 col-sm-3">
                         <h3>Learn</h3>
                         <ul>
-                            <li><a href="{{ path('sylius_faqs') }}">F.A.Q</a></li>
-                             <li><a href="{{ path('kulashare_responsability') }}">Social Responsibility</a></li>
+                            <li><a href="#">F.A.Q</a></li>
+                             <li><a href="#">Social Responsibility</a></li>
                         </ul>
                     </div>
                     <div class="in-lastcol col-lg-3 col-sm-3">
@@ -319,9 +319,9 @@
                     <div class="in-lastsec col-xs-6">
                         <h3>About</h3>
                          <ul>
-                            <li><a href="{{ path('sylius_mission') }}">Mission</a></li>
+                            <li><a href="#">Mission</a></li>
                            <!--  <li><a href="#">Vision</a></li> -->
-                            <li><a href="{{ path('sylius_about') }}">Team Kula</a></li>
+                            <li><a href="#">Team Kula</a></li>
                            <!--  <li><a href="#">Terms / Privacy</a></li>
                             <li><a href="/kulashare.com/faqs/">FAQ</a></li> -->
                         </ul>
@@ -329,8 +329,8 @@
                     <div class="in-lastsec col-xs-6">
                         <h3>Learn</h3>
                         <ul>
-                            <li><a href="{{ path('sylius_faqs') }}">F.A.Q</a></li>
-                             <li><a href="{{ path('kulashare_responsability') }}">Social Responsibility</a></li>
+                            <li><a href="#">F.A.Q</a></li>
+                             <li><a href="#">Social Responsibility</a></li>
                            <!--  <li><a href="#">Tutorials</a></li>
                             <li><a href="#">Media Center</a></li> -->
                             

@@ -1,4 +1,12 @@
-kulashare_message_inbox:
+#kulashare_message:
+#    resource: |
+#        alias: kulashare.message
+#        except: ['delete', 'update']
+#        templates: KulashareMessageBundle:Default
+#    type: sylius.resource
+#    prefix: /dashboard
+
+kulashare_message_index:
     path: /inbox
     methods: [GET]
     defaults:
@@ -14,11 +22,7 @@ kulashare_message_inbox:
             permission: false
 #            sorting:
 #                createdAt: desc
-
-api_message:
-    resource: kulashare.message
-    type: sylius.api
-
+#
 kulashare_message_create:
     path: /message/new
     methods: [GET, POST]
@@ -37,7 +41,7 @@ kulashare_message_delete:
         _controller: kulashare.controller.message:deleteAction
         _sylius:
             permission: false
-            redirect: 
+            redirect:
                 route: kulashare_message_inbox
 
 

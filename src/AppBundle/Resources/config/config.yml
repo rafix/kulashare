@@ -1,27 +1,41 @@
 sylius_user:
-    driver: doctrine/orm
-    classes:        
+    resources:
+#        user:
+#            templates: SyliusWebBundle:Frontend/User
+#            classes:
+#                model: Sylius\Component\Core\Model\User
+#                form:
+#                    default: Sylius\Bundle\CoreBundle\Form\Type\UserType
         customer:
-            model: Kulashare\Bundle\CustomerBundle\Entity\Customer # Your custom Custmer entity.    
+#            templates: SyliusWebBundle:Frontend/Customer
+            classes:
+                model: Kulashare\Bundle\CustomerBundle\Entity\Customer
+#                controller: Sylius\Bundle\CoreBundle\Controller\CustomerController
 
 sylius_product:
-    driver: doctrine/orm
-    classes:
+    resources:
         product:
-            model: Kulashare\Bundle\ProductBundle\Entity\Product           
-            form:
-                default: Kulashare\Bundle\ProductBundle\Form\Type\ProductType
-            translation:
-                model: Kulashare\Bundle\ProductBundle\Entity\ProductTranslation
+            classes:
+                model: Kulashare\Bundle\ProductBundle\Entity\Product
+#                controller: Sylius\Bundle\CoreBundle\Controller\ProductController
+#                repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository
                 form:
-                    default: Kulashare\Bundle\ProductBundle\Form\Type\ProductTranslationType
+                    default: Kulashare\Bundle\ProductBundle\Form\Type\ProductType
+            translation:
+                classes:
+                    model: Kulashare\Bundle\ProductBundle\Entity\ProductTranslation
+                    form:
+                        default: Kulashare\Bundle\ProductBundle\Form\Type\ProductTranslationType
 
 sylius_variation:
-    classes:
+    resources:
         product:
-            variant:                
-                form:
-                    default: Kulashare\Bundle\ProductBundle\Form\Type\ProductVariantType
+            variant:
+                classes:
+#                    model: Sylius\Component\Core\Model\ProductVariant
+#                    repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductVariantRepository
+                    form:
+                        default: Kulashare\Bundle\ProductBundle\Form\Type\ProductVariantType
 
 sylius_resource:
     resources:
@@ -31,3 +45,22 @@ sylius_resource:
                 model: Kulashare\Bundle\MessageBundle\Entity\Message
                 repository: Kulashare\Bundle\MessageBundle\Entity\MessageRepository
                 controller: Kulashare\Bundle\MessageBundle\Controller\DefaultController
+
+sylius_rbac:
+    permissions:
+        kulashare.manage.message: Manage messages
+        kulashare.message.show: Show message
+        kulashare.message.index: List messages
+        kulashare.message.create: Create message
+#        kulashare.message.update: Edit customer
+    permissions_hierarchy:
+        kulashare.manage.message: [kulashare.message.show, kulashare.message.index, kulashare.message.create]
+    roles:
+        messages_manager:
+            name: Messages Manager
+            description: Users responsible for messages management
+            permissions: [kulashare.manage.message]
+            security_roles: [ROLE_ADMINISTRATION_ACCESS]
+    roles_hierarchy:
+        administrator: [messages_manager, catalog_manager, sales_manager, marketing_manager, accounts_manager, shipping_manager, content_editor, tax_manager, it, support]
+        it: [security_auditor, developer]
