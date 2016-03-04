@@ -137,12 +137,8 @@ class DefaultController extends Controller
                       ->find($idRental);
         $order = $this->get('sylius.repository.cart')->createNew();
         $order_item = $this->get('sylius.repository.cart_item')->createNew();
-        print_r($rental->getProduct()->getVariants());
-        die;
         $order_item->setVariant($rental->getProduct()->getVariants()[0]);
         $order->addItem($order_item);
-        print_r($order_item);
-        die;
     }
 
     private function SendEmail($user_to, $subject, $template, $template_data)

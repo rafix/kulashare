@@ -126,9 +126,6 @@ class ProductController extends Controller
                         }
                         // Check if $uploadOk is set to 0 by an error
                 }
-            } else {
-                var_dump($form->getErrors());
-                die;
             }
         }
         if ($uploadOk != 0) {
