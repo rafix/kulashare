@@ -16,10 +16,9 @@
 
         {# stylesheets... #}
         {% block stylesheets %}
-            {% stylesheets
-                'css/bootstrap.min.css'
-                'css/font-awesome.css'
-                'assets/compiled/frontend.css'
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" type="text/css" />
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
+            {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
                 'bundles/syliusweb/css/frontend.css'
                 'bundles/syliusweb/css/blueimp-gallery.css'
             %}
@@ -30,7 +29,7 @@
             {% endif %}
             {# stylesheet kulashare... #}
             {% stylesheets 'js/layerslider/css/layerslider.css' filter='cssrewrite' %}
-                <link rel="stylesheet" href="{{ asset_url }}" />
+                <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
             
                 <link rel="stylesheet" href="{{ asset('css/style-index.css') }}" type="text/css" />
@@ -40,15 +39,14 @@
         {% endblock %}
         {# javascripts... #}
         {% block javascripts %}
-            {% javascripts
-                'js/jquery.min.js'
-                'js/bootstrap.min.js'
-                 'assets/compiled/frontend.js'
-                 'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+            {% javascripts output='assets/compiled/frontend.js'
+                'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
                 'bundles/syliusweb/js/confirm-modal.js'
                 'bundles/syliusweb/js/frontend.js'
-                 'bundles/syliusweb/js/form-spinner.js'
-                  'bundles/syliusweb/js/select2.js'
+                'bundles/syliusweb/js/form-spinner.js'
+                'bundles/syliusweb/js/select2.js'
                 'bundles/syliusweb/js/form-collection.js'
                 'bundles/syliusresource/js/form-collection.js'
             %}

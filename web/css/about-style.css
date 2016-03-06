@@ -1,0 +1,181 @@
+.about-cont {
+  clear: both;
+  display: table;
+  margin: 0 auto;
+  max-width: 880px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.about-page .in-sec1 {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.head-about2 {
+  border-bottom: 1px solid #78c7dc;
+  margin: 0 auto;
+  width: 240px;
+}
+
+.in-lighttitle {
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.banner-top {
+  background-color: #00b4e5;
+  float: left;
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.banner-body {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.banner-body > img {
+  width: 100%;
+}
+
+.head-aboutcont, .body-aboutcont, .body-about {
+  float: left;
+  width: 100%;
+}
+
+.body-about > p {
+  color: #5e747a;
+  text-align: center;
+}
+
+.body-abouta > p {
+  color: #5e747a;
+  margin-bottom: 25px;
+}
+
+.body-aboutb li {
+  background-image: url("../img/point.png");
+  background-position: left 5px;
+  background-repeat: no-repeat;
+  color: #5e747a;
+  list-style: outside none none;
+  margin-bottom: 13px;
+  padding-left: 22px;
+}
+
+.body-aboutb h2 {
+  color: #00b4e5;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.body-abouta {
+  float: left;
+  width: 65%;
+}
+
+.body-aboutb {
+  float: left;
+  width: 35%;
+  padding-left: 40px;
+}
+
+.head-aboutcont {
+  margin-bottom: 35px;
+}
+
+.body-aboutcont {
+  margin-bottom: 45px;
+}
+
+.body-about {
+  margin-bottom: 30px;
+}
+
+.testimonial-about {
+  height: 300px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.testimonial-about-center > h3 {
+  color: #00b4e5;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.testimonial-about-center > p {
+  color: #5e747a;
+  text-align: center;
+}
+
+.testimonial-about-center > img {
+  display: table;
+  margin: 0 auto;
+}
+
+.testimonial-about-center > h3 {
+  color: #00b4e5;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+
+@media (max-width: 767px) {
+
+	.body-abouta {
+	  padding-right: 30px;
+	}
+
+	.body-aboutb {
+	  padding-left: 0px;
+	}
+
+	.body-aboutb h2 {
+	  font-size: 16px;
+	  margin-bottom: 20px;
+	}
+
+	.testimonial-about-center > h3 {
+	  font-size: 15px;
+	  margin-top: 10px;
+	}
+
+	.testimonial-about-center > p {
+	  font-size: 12px;
+	}
+
+	.testimonial-about {
+	  height: 280px;
+	}
+
+}
+
+@media (max-width: 530px) {
+
+	.testimonial-about {
+		width: 100%;
+	}
+
+	.body-abouta {
+	  padding-left: 10px;
+	  padding-right: 10px;
+	  width: 100%;
+	}
+
+	.body-aboutb {
+	  margin-top: 35px;
+	  padding-left: 10px;
+	  padding-right: 10px;
+	  width: 100%;
+	}
+
+}
