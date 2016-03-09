@@ -1551,17 +1551,17 @@
         },
         {
             "name": "friendsofsymfony/rest-bundle",
-            "version": "1.7.7",
+            "version": "1.7.8",
             "target-dir": "FOS/RestBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "c79b7e5df96e5581591ceb6a026bd4e5f9346de0"
+                "reference": "691e7c52d7cf9df266c6404180eda1e47cc64f59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/c79b7e5df96e5581591ceb6a026bd4e5f9346de0",
-                "reference": "c79b7e5df96e5581591ceb6a026bd4e5f9346de0",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/691e7c52d7cf9df266c6404180eda1e47cc64f59",
+                "reference": "691e7c52d7cf9df266c6404180eda1e47cc64f59",
                 "shasum": ""
             },
             "require": {
@@ -1574,15 +1574,16 @@
                 "willdurand/negotiation": "~1.2"
             },
             "conflict": {
-                "jms/serializer": "<0.12",
+                "jms/serializer": "<0.13",
                 "jms/serializer-bundle": "<0.11",
+                "sensio/framework-extra-bundle": ">=3.0.13",
                 "symfony/validator": ">=2.5.0,<2.5.5"
             },
             "require-dev": {
                 "jms/serializer": "~0.13|~1.0",
-                "jms/serializer-bundle": "~0.12|~1.0",
+                "jms/serializer-bundle": "~0.11|~1.0",
                 "phpoption/phpoption": "~1.1.0",
-                "sensio/framework-extra-bundle": "~2.0|~3.0",
+                "sensio/framework-extra-bundle": "~2.0|~3.0,<3.0.13",
                 "sllh/php-cs-fixer-styleci-bridge": "^1.3",
                 "symfony/browser-kit": "~2.3|~3.0",
                 "symfony/dependency-injection": "~2.3|~3.0",
@@ -1594,8 +1595,8 @@
                 "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
-                "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires ~0.12||~1.0",
-                "sensio/framework-extra-bundle": "Add support for route annotations and the view response listener, requires ~3.0",
+                "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires ~0.12|~1.0",
+                "sensio/framework-extra-bundle": "Add support for route annotations and the view response listener, requires ~2.0|~3.0",
                 "symfony/serializer": "Add support for basic serialization capabilities and xml decoding, requires ~2.3",
                 "symfony/validator": "Add support for validation capabilities in the ParamFetcher, requires ~2.3"
             },
@@ -1633,7 +1634,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2015-12-29 16:02:50"
+            "time": "2016-03-03 17:30:37"
         },
         {
             "name": "fzaninotto/faker",
@@ -1925,16 +1926,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea"
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/b1e1c0d55f8083c71eda2c28c12a228d708294ea",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/bb9024c526b22f3fe6ae55a561fd70653d470aa8",
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8",
                 "shasum": ""
             },
             "require": {
@@ -1972,7 +1973,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-10-15 22:28:00"
+            "time": "2016-03-08 01:15:46"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2034,16 +2035,16 @@
         },
         {
             "name": "hwi/oauth-bundle",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hwi/HWIOAuthBundle.git",
-                "reference": "86b5a876224b8a26707813aa94d3637886aa2041"
+                "reference": "ae741802c8e99d8fa52de927fd483d0299911293"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/86b5a876224b8a26707813aa94d3637886aa2041",
-                "reference": "86b5a876224b8a26707813aa94d3637886aa2041",
+                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/ae741802c8e99d8fa52de927fd483d0299911293",
+                "reference": "ae741802c8e99d8fa52de927fd483d0299911293",
                 "shasum": ""
             },
             "require": {
@@ -2061,7 +2062,7 @@
             "require-dev": {
                 "doctrine/orm": "~2.3",
                 "friendsofsymfony/user-bundle": "~1.3|~2.0",
-                "phpunit/phpunit": "~4.8",
+                "phpunit/phpunit": "~4.8|~5.0",
                 "symfony/phpunit-bridge": "~2.7",
                 "symfony/property-access": "~2.3",
                 "symfony/twig-bundle": "~2.3",
@@ -2170,7 +2171,7 @@
                 "yandex",
                 "youtube"
             ],
-            "time": "2015-12-04 12:33:38"
+            "time": "2016-03-08 08:00:04"
         },
         {
             "name": "imagine/imagine",
@@ -5563,16 +5564,16 @@
         },
         {
             "name": "payum/payum",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/Payum.git",
-                "reference": "85135397fa2210dfb0d3027ec1c809fd69a046a5"
+                "reference": "a367fcff7762871293f11f377406f674ffdd5cb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/Payum/zipball/85135397fa2210dfb0d3027ec1c809fd69a046a5",
-                "reference": "85135397fa2210dfb0d3027ec1c809fd69a046a5",
+                "url": "https://api.github.com/repos/Payum/Payum/zipball/a367fcff7762871293f11f377406f674ffdd5cb0",
+                "reference": "a367fcff7762871293f11f377406f674ffdd5cb0",
                 "shasum": ""
             },
             "require": {
@@ -5690,20 +5691,20 @@
                 "stripe checkout",
                 "stripe.js"
             ],
-            "time": "2016-03-04 20:04:43"
+            "time": "2016-03-07 19:11:05"
         },
         {
             "name": "payum/payum-bundle",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/PayumBundle.git",
-                "reference": "83ff7158c84bde84d855484dcee9f2119861bea8"
+                "reference": "07ac974e35a6a7ebc58f96274e4d32768be2afb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/PayumBundle/zipball/83ff7158c84bde84d855484dcee9f2119861bea8",
-                "reference": "83ff7158c84bde84d855484dcee9f2119861bea8",
+                "url": "https://api.github.com/repos/Payum/PayumBundle/zipball/07ac974e35a6a7ebc58f96274e4d32768be2afb6",
+                "reference": "07ac974e35a6a7ebc58f96274e4d32768be2afb6",
                 "shasum": ""
             },
             "require": {
@@ -5790,7 +5791,7 @@
                 "stripe.js",
                 "symfony"
             ],
-            "time": "2016-02-16 20:25:50"
+            "time": "2016-03-07 19:13:26"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -9601,12 +9602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lakion/ApiTestCase.git",
-                "reference": "ae9e1b635f26780df66fb034c8c3566d52eca928"
+                "reference": "441618f9e447ec55a17dfe10a5b72f0b990e6efa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lakion/ApiTestCase/zipball/ae9e1b635f26780df66fb034c8c3566d52eca928",
-                "reference": "ae9e1b635f26780df66fb034c8c3566d52eca928",
+                "url": "https://api.github.com/repos/Lakion/ApiTestCase/zipball/441618f9e447ec55a17dfe10a5b72f0b990e6efa",
+                "reference": "441618f9e447ec55a17dfe10a5b72f0b990e6efa",
                 "shasum": ""
             },
             "require": {
@@ -9671,7 +9672,7 @@
                 "testcase",
                 "xml"
             ],
-            "time": "2016-02-19 13:04:42"
+            "time": "2016-03-09 13:30:26"
         },
         {
             "name": "mockery/mockery",
