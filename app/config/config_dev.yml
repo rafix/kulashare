@@ -14,10 +14,10 @@ monolog:
         main:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
-            level: warning
+            level: error
         firephp:
             type:  firephp
-            level: info
+            level: warning
 
 assetic:
     use_controller: true
