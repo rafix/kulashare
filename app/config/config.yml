@@ -26,7 +26,6 @@ twig:
             - SyliusWebBundle:Common:forms.html.twig
             - SyliusResourceBundle::forms.html.twig
             - CmfMediaBundle:Form:fields.html.twig
-    cache: false
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
     paths:
