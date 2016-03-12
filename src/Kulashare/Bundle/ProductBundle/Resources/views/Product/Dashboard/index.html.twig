@@ -8,7 +8,7 @@
 		{{ form_errors(form) }}
 		
 
-		{{ form_row(form.masterVariant.sku), { 'attr': {'type': 'hidden'} } }}
+		{{ form_row(form.masterVariant.sku, { 'attr': {'type': 'hidden'}}) }}
 		{{ form_row(form.masterVariant.price) }}
 		{#{{ form_row(form.masterVariant.pricingCalculator) }}#}
 		{{ form_row(form.masterVariant.onHand) }}
