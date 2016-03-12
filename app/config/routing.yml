@@ -70,3 +70,5 @@ facebook_login:
 # google_login:
 #     path: /login/check-google
 
+symfony_cmf:
+    resource: @CmfCreateBundle/Resources/config/routing/rest_no_locale.xml
