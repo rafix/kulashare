@@ -3,12 +3,12 @@
 
 <div class="row">
 	<div class="col-md-7">
-	<form action="{{ path('kulashare_product_create') }}" method="post" "{{ form_enctype(form) }}" class="form-horizontal" >
+	<form action="{{ path('kulashare_product_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal" >
 	 <fieldset class="well">
 		{{ form_errors(form) }}
 		
 
-		{{ form_row(form.masterVariant.sku), { 'attr': {'type': 'hidden'} }) }}
+		{{ form_row(form.masterVariant.sku), { 'attr': {'type': 'hidden'} } }}
 		{{ form_row(form.masterVariant.price) }}
 		{#{{ form_row(form.masterVariant.pricingCalculator) }}#}
 		{{ form_row(form.masterVariant.onHand) }}
