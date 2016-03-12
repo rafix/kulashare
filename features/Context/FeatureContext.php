@@ -9,8 +9,8 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Symfony2Extension\Context\KernelAwareContext;
 
-use Symfony\Component\HttpKernel\KernelInterface;
 use Doctrine\Common\Util\Inflector;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 class FeatureContext extends RawMinkContext implements KernelAwareContext
 {

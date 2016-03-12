@@ -2,10 +2,10 @@
 
 namespace Kulashare\Bundle\RentalBundle\Controller;
 
+use Kulashare\Bundle\MessageBundle\Entity\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Kulashare\Bundle\MessageBundle\Entity\Message;
 
 class DefaultController extends Controller
 {

@@ -3,8 +3,10 @@
 namespace Kulashare\Bundle\KulashareRentalsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class RentalRequestType extends AbstractType
 {
@@ -15,13 +17,13 @@ class RentalRequestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('product_id', 'hidden', array('data' => $product_id ),
+            ->add('product_id', HiddenType::class, array('data' => $product_id ),
             ))
-            ->add('user_id', 'hidden', array('data' => $user_id ),
+            ->add('user_id', HiddenType::class, array('data' => $user_id ),
             ))
-            ->add('user_rental', 'hidden', array('data' => $user_rental ),
+            ->add('user_rental', HiddenType::class, array('data' => $user_rental ),
             ))
-            ->add('createdatstart', 'time')
+            ->add('createdatstart', TimeType::class)
             ->add('createdatend', 'date')
             ->add('updatedatstart', 'date')
             ->add('updatedatend', 'date')
@@ -35,7 +37,7 @@ class RentalRequestType extends AbstractType
     /**
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Infl\BackEnd\DBBundle\Entity\CategorySearch'
@@ -45,7 +47,7 @@ class RentalRequestType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'infl_backend_dbbundle_categorysearch';
     }

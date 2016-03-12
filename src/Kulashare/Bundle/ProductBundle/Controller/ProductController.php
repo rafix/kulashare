@@ -2,13 +2,13 @@
 
 namespace Kulashare\Bundle\ProductBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kulashare\Bundle\ProductBundle\Entity\Product;
 use Kulashare\Bundle\ProductBundle\Entity\ProductTranslation;
 use Kulashare\Bundle\ProductBundle\Form\Type\ProductType;
-use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller

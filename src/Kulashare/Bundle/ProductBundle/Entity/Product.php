@@ -2,9 +2,9 @@
 
 namespace Kulashare\Bundle\ProductBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 use Sylius\Component\Core\Model\User;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Product.

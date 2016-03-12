@@ -2,12 +2,12 @@
 
 namespace Kulashare\Bundle\ProductBundle\Form\Type;
 
+use Sylius\Bundle\CoreBundle\EventListener\ImageUploadListener;
 use Sylius\Bundle\CoreBundle\Form\Type\ProductVariantType as BaseVariantType;
+use Sylius\Component\Core\Uploader\ImageUploader;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
-use Sylius\Bundle\CoreBundle\EventListener\ImageUploadListener;
-use Sylius\Component\Core\Uploader\ImageUploader;
 
 class ProductVariantType extends BaseVariantType
 {
