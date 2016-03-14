@@ -18,23 +18,20 @@
 
         {# stylesheets... #}
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" />
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
             <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
             {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
                 'bundles/syliusweb/css/frontend.css'
                 'bundles/syliusweb/css/blueimp-gallery.css'
+                'js/layerslider/css/layerslider.css'
+                'css/style-index.css'
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
             {% if is_granted('ROLE_ADMINISTRATION_ACCESS') %}
                 {% include "CmfCreateBundle::includecssfiles.html.twig" %}
             {% endif %}
-            {# stylesheet kulashare... #}
-            {% stylesheets 'js/layerslider/css/layerslider.css' filter='cssrewrite' %}
-                <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
-            {% endstylesheets %}
 
-                <link rel="stylesheet" href="{{ asset('css/style-index.css') }}" type="text/css" />
         {% endblock %}
 
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -163,7 +160,6 @@
             {% endblock %}
 
             {% block main %}
-            <hr>
             {% block slideshow_full %}{% endblock %}
                 <div class="container">
                     <div class="row">
