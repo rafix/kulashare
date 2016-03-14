@@ -154,4 +154,9 @@ class Product extends BaseProduct
     {
         return $this->longitud;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
 }

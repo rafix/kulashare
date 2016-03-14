@@ -2,7 +2,7 @@
 
 namespace Kulashare\Bundle\RentalBundle\Entity;
 
-use Doctrine\ORM\EntityRepository;
+use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 /**
  * RentalsRepository.

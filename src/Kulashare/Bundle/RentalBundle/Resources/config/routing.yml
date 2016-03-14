@@ -1,3 +1,10 @@
+#kulashare_rental:
+#    resource: |
+#        alias: kulashare.rental
+#        except: ['delete']
+#        templates: KulashareRentalBundle:Default
+#    type: sylius.resource
+
 kulashare_rental_avaible:
     path:     /product-available
     defaults: { _controller: KulashareRentalBundle:Default:available }
@@ -15,10 +22,14 @@ kulashare_rental_reject:
     defaults: { _controller: KulashareRentalBundle:Default:rejectRental}
 kulashare_rental_checkout:
     path:     /rental-checkout
-    defaults: { _controller: KulashareRentalBundle:Default:checkoutRental}
+    defaults:
+        _controller: KulashareRentalBundle:Default:checkoutRental
 kulashare_rental_list_dashboar:
     path:     /dashboard
-    defaults: { _controller: KulashareRentalBundle:Default:listRentalDashboard}
+    defaults:
+        _controller: kulashare.controller.rental:listRentalDashboardAction
+        _sylius:
+            template:  KulashareCustomerBundle:Customer:dashboard.html.twig
 kulashare_lender_dashboard:
     path:     /lender/dashboard
     defaults: { _controller: KulashareRentalBundle:Default:listRentalDashboard}

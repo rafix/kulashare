@@ -64,10 +64,10 @@ sylius_rbac:
         kulashare.rental.show: Show rental
         kulashare.rental.index: List rentals
         kulashare.rental.create: Create rental
-        kulashare.rental.update: Edit rental
+        kulashare.rental.update: Update rental
     permissions_hierarchy:
         kulashare.manage.message: [kulashare.message.show, kulashare.message.index, kulashare.message.create]
-        kulashare.manage.rental: [kulashare.rental.show, kulashare.rental.index, kulashare.rental.create, kulashare.rental.edit]
+        kulashare.manage.rental: [kulashare.rental.show, kulashare.rental.index, kulashare.rental.create, kulashare.rental.update]
     roles:
         messages_manager:
             name: Messages Manager
