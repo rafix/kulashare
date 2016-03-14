@@ -37,7 +37,6 @@ security:
                 default_target_path: /dashboard
                 use_forward:  false
                 use_referer: true
-                csrf_token_generator: security.csrf.token_manager
             remember_me:
                 key: %sylius.secret%
                 name: APP_REMEMBER_ME
