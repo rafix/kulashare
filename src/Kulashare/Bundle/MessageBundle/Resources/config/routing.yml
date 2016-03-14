@@ -1,9 +1,9 @@
-#kulashare_message:
-#    resource: |
-#        alias: kulashare.message
-#        except: ['delete', 'update']
-#        templates: KulashareMessageBundle:Default
-#    type: sylius.resource
+kulashare_message:
+    resource: |
+        alias: kulashare.message
+        except: ['delete', 'update']
+        templates: KulashareMessageBundle:Default
+    type: sylius.resource
 #    prefix: /dashboard
 
 kulashare_message_index:
@@ -44,12 +44,12 @@ kulashare_message_delete:
             redirect:
                 route: kulashare_message_inbox
 
-
-kulashare_message_show:
-    path: /message/show/{id}
-    methods: [GET]
-    defaults:
-        _controller: kulashare.controller.message:showAction
-        _sylius:
-            template:  KulashareMessageBundle:Default:show.html.twig
-            permission: false
+#
+#kulashare_message_show:
+#    path: /message/show/{id}
+#    methods: [GET]
+#    defaults:
+#        _controller: kulashare.controller.message:showAction
+#        _sylius:
+#            template:  KulashareMessageBundle:Default:show.html.twig
+#            permission: true

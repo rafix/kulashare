@@ -4,6 +4,7 @@
 namespace Kulashare\Bundle\MessageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Resource\Model\ResourceInterface;
 
 /**
  * Message.
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="kulashare_messages")
  * @ORM\Entity(repositoryClass="Kulashare\Bundle\MessageBundle\Entity\MessageRepository")
  */
-class Message
+class Message implements ResourceInterface
 {
     /**
      * @var int
@@ -246,5 +247,10 @@ class Message
     public function setSubject($subject)
     {
         $this->subject = $subject;
+    }
+
+    public function __toString()
+    {
+        return $this->getSubject();
     }
 }

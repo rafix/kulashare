@@ -33,7 +33,7 @@
             {% stylesheets 'js/layerslider/css/layerslider.css' filter='cssrewrite' %}
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
-            
+
                 <link rel="stylesheet" href="{{ asset('css/style-index.css') }}" type="text/css" />
         {% endblock %}
 
@@ -368,11 +368,11 @@
         {% endblock %}
         {#</div>#}
 
-        {% if is_granted('ROLE_ADMINISTRATION_ACCESS') %}
-            {% render(controller(
-            "cmf_create.jsloader.controller:includeJSFilesAction",
-            {'_locale': app.request.locale, 'editor': 'hallo'}
-            )) %}
-        {% endif %}
+        {#{% if is_granted('ROLE_ADMINISTRATION_ACCESS') %}#}
+            {#{% render(controller(#}
+            {#"cmf_create.jsloader.controller:includeJSFilesAction",#}
+            {#{'_locale': app.request.locale, 'editor': 'hallo'}#}
+            {#)) %}#}
+        {#{% endif %}#}
     </body>
 </html>
