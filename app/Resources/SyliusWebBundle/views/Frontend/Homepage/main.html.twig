@@ -1,5 +1,5 @@
 {% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
-{% block content %}
+{% block slideshow_full %}
 
 
  <!-- ======================== Carousel ================================ -->
@@ -540,7 +540,8 @@
                 </div>
 			</div>
 		</div>
-<div class="in-sec5">
+
+		<div class="in-sec5">
 			<div class="in-sec">
 				<div class="in-graycont">
 					<form method="GET" action="{{path('kulashare_product_search')}}">
@@ -552,8 +553,11 @@
 				</div>
 			</div>
 		</div>
+{% endblock %}
+
+{% block content %}
 <!-- productos -->		
-{{ render(controller('KulashareStoreFrontBundle:HomePage:recentProducts')) }} 
+{#{{ render(controller('KulashareStoreFrontBundle:HomePage:recentProducts')) }}#}
 <div class="in-sec in-sec7">
 			<div class="in-featbody col-sm-12 col-md-4 col-lg-4">			
 				<div class="in-featcont">

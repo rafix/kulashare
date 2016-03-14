@@ -3,16 +3,12 @@
 namespace Kulashare\Bundle\RentalBundle\Controller;
 
 use Kulashare\Bundle\MessageBundle\Entity\Message;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sylius\Bundle\ResourceBundle\Controller\ResourceController as Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
-    {
-        return $this->render('KulashareRentalBundle:Default:index.html.twig', array('name' => $name));
-    }
 
     public function availableAction(Request $request)
     {
@@ -189,7 +185,6 @@ class DefaultController extends Controller
                     ->findMessagesByUser($user->getId());
 
         $products = $query->setMaxResults(6)->getResult();
-        //var_dump($request_rentals[0]);die;
         return $this->render('KulashareCustomerBundle:Customer:dashboard.html.twig', array('products' => $products, 'rentals' => $rentals, 'request' => $request_rentals, 'messages' => $messages));
     }
     public function listLenderDashboardAction(Request $request)

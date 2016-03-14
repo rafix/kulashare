@@ -10,15 +10,15 @@ sylius_user:
 #            templates: SyliusWebBundle:Frontend/Customer
             classes:
                 model: Kulashare\Bundle\CustomerBundle\Entity\Customer
-#                controller: Sylius\Bundle\CoreBundle\Controller\CustomerController
+                controller: Sylius\Bundle\CoreBundle\Controller\CustomerController
 
 sylius_product:
     resources:
         product:
             classes:
                 model: Kulashare\Bundle\ProductBundle\Entity\Product
-#                controller: Sylius\Bundle\CoreBundle\Controller\ProductController
-#                repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository
+                controller: Kulashare\Bundle\ProductBundle\Controller\ProductController
+                repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository
                 form:
                     default: Kulashare\Bundle\ProductBundle\Form\Type\ProductType
             translation:
@@ -32,8 +32,8 @@ sylius_variation:
         product:
             variant:
                 classes:
-#                    model: Sylius\Component\Core\Model\ProductVariant
-#                    repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductVariantRepository
+                    model: Sylius\Component\Core\Model\ProductVariant
+                    repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductVariantRepository
                     form:
                         default: Kulashare\Bundle\ProductBundle\Form\Type\ProductVariantType
 
@@ -46,6 +46,13 @@ sylius_resource:
                 repository: Kulashare\Bundle\MessageBundle\Entity\MessageRepository
                 controller: Kulashare\Bundle\MessageBundle\Controller\DefaultController
 
+        kulashare.rental:
+            driver: doctrine/orm
+            classes:
+                model: Kulashare\Bundle\RentalBundle\Entity\Rentals
+                repository: Kulashare\Bundle\RentalBundle\Entity\RentalsRepository
+                controller: Kulashare\Bundle\RentalBundle\Controller\DefaultController
+
 sylius_rbac:
     permissions:
         kulashare.manage.message: Manage messages
@@ -53,14 +60,25 @@ sylius_rbac:
         kulashare.message.index: List messages
         kulashare.message.create: Create message
 #        kulashare.message.update: Edit customer
+        kulashare.manage.rental: Manage rentals
+        kulashare.rental.show: Show rental
+        kulashare.rental.index: List rentals
+        kulashare.rental.create: Create rental
+        kulashare.rental.update: Edit rental
     permissions_hierarchy:
         kulashare.manage.message: [kulashare.message.show, kulashare.message.index, kulashare.message.create]
+        kulashare.manage.rental: [kulashare.rental.show, kulashare.rental.index, kulashare.rental.create, kulashare.rental.edit]
     roles:
         messages_manager:
             name: Messages Manager
             description: Users responsible for messages management
             permissions: [kulashare.manage.message]
             security_roles: [ROLE_ADMINISTRATION_ACCESS]
+        rentals_manager:
+            name: Rental Manager
+            description: Users responsible for rentals management
+            permissions: [kulashare.manage.rental]
+            security_roles: [ROLE_ADMINISTRATION_ACCESS]
     roles_hierarchy:
-        administrator: [messages_manager, catalog_manager, sales_manager, marketing_manager, accounts_manager, shipping_manager, content_editor, tax_manager, it, support]
+        administrator: [messages_manager, rentals_manager, catalog_manager, sales_manager, marketing_manager, accounts_manager, shipping_manager, content_editor, tax_manager, it, support]
         it: [security_auditor, developer]

@@ -2,7 +2,7 @@
 
 namespace Kulashare\Bundle\CustomerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sylius\Bundle\ResourceBundle\Controller\ResourceController as Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class CustomerController extends Controller

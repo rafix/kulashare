@@ -17,12 +17,9 @@ class RentalRequestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('product_id', HiddenType::class, array('data' => $product_id ),
-            ))
-            ->add('user_id', HiddenType::class, array('data' => $user_id ),
-            ))
-            ->add('user_rental', HiddenType::class, array('data' => $user_rental ),
-            ))
+            ->add('product_id', HiddenType::class, array('data' => $product_id ))
+            ->add('user_id', HiddenType::class, array('data' => $user_id ))
+            ->add('user_rental', HiddenType::class, array('data' => $user_rental ))
             ->add('createdatstart', TimeType::class)
             ->add('createdatend', 'date')
             ->add('updatedatstart', 'date')
