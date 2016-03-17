@@ -5564,16 +5564,16 @@
         },
         {
             "name": "payum/payum",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/Payum.git",
-                "reference": "a367fcff7762871293f11f377406f674ffdd5cb0"
+                "reference": "f0576fb036ce5405eb9cbd6a440be2e319c4bfa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/Payum/zipball/a367fcff7762871293f11f377406f674ffdd5cb0",
-                "reference": "a367fcff7762871293f11f377406f674ffdd5cb0",
+                "url": "https://api.github.com/repos/Payum/Payum/zipball/f0576fb036ce5405eb9cbd6a440be2e319c4bfa7",
+                "reference": "f0576fb036ce5405eb9cbd6a440be2e319c4bfa7",
                 "shasum": ""
             },
             "require": {
@@ -5691,7 +5691,7 @@
                 "stripe checkout",
                 "stripe.js"
             ],
-            "time": "2016-03-07 19:11:05"
+            "time": "2016-03-16 07:06:00"
         },
         {
             "name": "payum/payum-bundle",
@@ -8384,16 +8384,16 @@
         },
         {
             "name": "white-october/pagerfanta-bundle",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git",
-                "reference": "e6b020f9c2af6fa5a46d780039c57fdb89003f6c"
+                "reference": "ada62843d9ba0d3aa61d0dcc7becdb25a2e2f545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/e6b020f9c2af6fa5a46d780039c57fdb89003f6c",
-                "reference": "e6b020f9c2af6fa5a46d780039c57fdb89003f6c",
+                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/ada62843d9ba0d3aa61d0dcc7becdb25a2e2f545",
+                "reference": "ada62843d9ba0d3aa61d0dcc7becdb25a2e2f545",
                 "shasum": ""
             },
             "require": {
@@ -8432,7 +8432,7 @@
                 "page",
                 "paging"
             ],
-            "time": "2015-12-06 17:16:06"
+            "time": "2016-03-16 19:24:56"
         },
         {
             "name": "willdurand/hateoas",

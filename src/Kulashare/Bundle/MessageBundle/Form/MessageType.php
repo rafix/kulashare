@@ -3,6 +3,7 @@
 namespace Kulashare\Bundle\MessageBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,13 +16,11 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('subject')
-            ->add('comment')
-            ->add('state')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('userReceiver')
             ->add('author')
+            ->add('userReceiver')
+            ->add('state')
+            ->add('subject')
+            ->add('comment', TextareaType::class)
         ;
     }
 
@@ -40,6 +39,6 @@ class MessageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'kulashare_bundle_messagebundle_message';
+        return 'kulashare_bundle_message';
     }
 }

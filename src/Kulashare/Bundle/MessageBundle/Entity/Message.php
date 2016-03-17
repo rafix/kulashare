@@ -251,6 +251,6 @@ class Message implements ResourceInterface
 
     public function __toString()
     {
-        return $this->getSubject();
+        return (string) $this->getSubject();
     }
 }

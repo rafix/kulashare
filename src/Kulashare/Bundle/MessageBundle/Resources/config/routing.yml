@@ -19,7 +19,7 @@ kulashare_message_index:
             paginate:  false
             limit: 30
 #            sortable:  true
-            permission: false
+            permission: true
 #            sorting:
 #                createdAt: desc
 #
@@ -29,10 +29,10 @@ kulashare_message_create:
     defaults:
         _controller: kulashare.controller.message:createAction
         _sylius:
-            form: kulashare_bundle_messagebundle_message
-            permission: false
+            form: Kulashare\Bundle\MessageBundle\Form\MessageType
+            permission: true
             redirect: kulashare_message_show
-            template: KulashareMessageBundle:Default:_form.html.twig
+            template: KulashareMessageBundle:Default:create.html.twig
 
 kulashare_message_delete:
     path: /message/{id}
@@ -40,16 +40,6 @@ kulashare_message_delete:
     defaults:
         _controller: kulashare.controller.message:deleteAction
         _sylius:
-            permission: false
+            permission: true
             redirect:
                 route: kulashare_message_inbox
-
-#
-#kulashare_message_show:
-#    path: /message/show/{id}
-#    methods: [GET]
-#    defaults:
-#        _controller: kulashare.controller.message:showAction
-#        _sylius:
-#            template:  KulashareMessageBundle:Default:show.html.twig
-#            permission: true

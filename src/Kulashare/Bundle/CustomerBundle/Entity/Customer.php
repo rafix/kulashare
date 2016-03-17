@@ -308,7 +308,7 @@ class Customer extends BaseCustomer
         $this->orders->removeElement($order);
     }
 
-    // public function __toString(){
-    //     return $thist->getName();
-    // }
+     public function __toString(){
+         return (string) $this->getEmail();
+     }
 }
