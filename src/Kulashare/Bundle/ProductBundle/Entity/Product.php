@@ -2,8 +2,10 @@
 
 namespace Kulashare\Bundle\ProductBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Product as BaseProduct;
+use Sylius\Component\Core\Model\ProductVariant;
 use Sylius\Component\Core\Model\User;
 
 /**
@@ -158,5 +160,15 @@ class Product extends BaseProduct
     public function __toString()
     {
         return (string) $this->getName();
+    }
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->setMasterVariant(new ProductVariant());
+        $this->taxons = new ArrayCollection();
+
+        $this->variantSelectionMethod = self::VARIANT_SELECTION_CHOICE;
     }
 }

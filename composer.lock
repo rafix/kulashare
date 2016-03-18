@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "00b8e811a6a4c4946b9e3c61fb3a732d",
-    "content-hash": "9cde38e0d45e8817144cfb565fa0f1bd",
+    "hash": "ca6f01f3204a1666f58882e61039772b",
+    "content-hash": "d356a81c8365788fb5c1c5c8a9c0ca71",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -5392,16 +5392,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.2.2",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "b3313b618f4edd76523572531d5d7e22fe747430"
+                "reference": "a93889dfb1c0ae465b62236ede8d00d3ea260952"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b3313b618f4edd76523572531d5d7e22fe747430",
-                "reference": "b3313b618f4edd76523572531d5d7e22fe747430",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a93889dfb1c0ae465b62236ede8d00d3ea260952",
+                "reference": "a93889dfb1c0ae465b62236ede8d00d3ea260952",
                 "shasum": ""
             },
             "require": {
@@ -5436,7 +5436,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-11 19:54:08"
+            "time": "2016-03-18 17:16:04"
         },
         {
             "name": "payum/iso4217",
@@ -5564,16 +5564,16 @@
         },
         {
             "name": "payum/payum",
-            "version": "1.2.5",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/Payum.git",
-                "reference": "f0576fb036ce5405eb9cbd6a440be2e319c4bfa7"
+                "reference": "6e00500a71ec95bb4a375948c955f27a4ab838cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/Payum/zipball/f0576fb036ce5405eb9cbd6a440be2e319c4bfa7",
-                "reference": "f0576fb036ce5405eb9cbd6a440be2e319c4bfa7",
+                "url": "https://api.github.com/repos/Payum/Payum/zipball/6e00500a71ec95bb4a375948c955f27a4ab838cf",
+                "reference": "6e00500a71ec95bb4a375948c955f27a4ab838cf",
                 "shasum": ""
             },
             "require": {
@@ -5607,7 +5607,7 @@
                 "klarna/checkout": "~1|~2.0",
                 "omnipay/dummy": "~2.0",
                 "paypal/rest-api-sdk-php": "0.5.*",
-                "payum/omnipay-bridge": "~1.0@dev",
+                "payum/omnipay-bridge": "^1",
                 "phpunit/phpunit": "~4.0",
                 "propel/propel1": "~1.7",
                 "psr/log": "~1.0",
@@ -5691,7 +5691,7 @@
                 "stripe checkout",
                 "stripe.js"
             ],
-            "time": "2016-03-16 07:06:00"
+            "time": "2016-03-18 15:48:56"
         },
         {
             "name": "payum/payum-bundle",
@@ -6627,16 +6627,16 @@
         },
         {
             "name": "sylius/sylius",
-            "version": "v0.17.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "73397b078f2b34982040b4bcfc8b79532262966d"
+                "reference": "d9533076fe607e11bc8da78ec189365f62149cb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/73397b078f2b34982040b4bcfc8b79532262966d",
-                "reference": "73397b078f2b34982040b4bcfc8b79532262966d",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/d9533076fe607e11bc8da78ec189365f62149cb3",
+                "reference": "d9533076fe607e11bc8da78ec189365f62149cb3",
                 "shasum": ""
             },
             "require": {
@@ -6656,6 +6656,7 @@
                 "friendsofsymfony/oauth-server-bundle": "~1.4",
                 "friendsofsymfony/rest-bundle": "~1.5",
                 "fzaninotto/faker": "~1.2",
+                "gedmo/doctrine-extensions": "^2.4.12",
                 "hwi/oauth-bundle": "~0.3",
                 "incenteev/composer-parameter-handler": "~2.0",
                 "jackalope/jackalope": "^1.1.4",
@@ -6699,6 +6700,7 @@
                 "symfony/twig-bundle": "^2.7",
                 "twig/extensions": "~1.0",
                 "twig/twig": "~1.11",
+                "webmozart/assert": "^1.0",
                 "white-october/pagerfanta-bundle": "~1.0",
                 "willdurand/hateoas-bundle": "^0.4|^1.0",
                 "winzou/state-machine-bundle": "~0.2",
@@ -6761,8 +6763,6 @@
                 "sylius/taxonomy": "self.version",
                 "sylius/taxonomy-bundle": "self.version",
                 "sylius/theme-bundle": "self.version",
-                "sylius/translation": "self.version",
-                "sylius/translation-bundle": "self.version",
                 "sylius/ui-bundle": "self.version",
                 "sylius/user": "self.version",
                 "sylius/user-bundle": "self.version",
@@ -6798,7 +6798,7 @@
             "type": "project",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.17-dev"
+                    "dev-master": "0.18-dev"
                 },
                 "incenteev-parameters": {
                     "file": "app/config/parameters.yml"
@@ -6831,7 +6831,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2016-03-01 13:01:35"
+            "time": "2016-03-18 13:42:10"
         },
         {
             "name": "symfony-cmf/block-bundle",
@@ -8383,6 +8383,55 @@
             "time": "2016-01-25 21:22:18"
         },
         {
+            "name": "webmozart/assert",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "time": "2015-08-24 13:29:44"
+        },
+        {
             "name": "white-october/pagerfanta-bundle",
             "version": "v1.0.6",
             "source": {
@@ -9386,12 +9435,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coduo/php-matcher.git",
-                "reference": "5fc8221869aa54200bba709310f3383c3d6f404c"
+                "reference": "fddefee866d44f673f68d2bc7716b7fa824b6942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coduo/php-matcher/zipball/5fc8221869aa54200bba709310f3383c3d6f404c",
-                "reference": "5fc8221869aa54200bba709310f3383c3d6f404c",
+                "url": "https://api.github.com/repos/coduo/php-matcher/zipball/fddefee866d44f673f68d2bc7716b7fa824b6942",
+                "reference": "fddefee866d44f673f68d2bc7716b7fa824b6942",
                 "shasum": ""
             },
             "require": {
@@ -9438,7 +9487,7 @@
                 "matcher",
                 "tests"
             ],
-            "time": "2016-03-03 16:14:59"
+            "time": "2016-03-18 09:28:02"
         },
         {
             "name": "coduo/php-to-string",

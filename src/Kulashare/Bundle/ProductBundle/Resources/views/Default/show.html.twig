@@ -1,4 +1,16 @@
 {% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% set form = sylius_cart_form({'product': product}) %}
+{% from 'SyliusWebBundle:Frontend/Product:macros.html.twig' import sylius_display_price %}
+
+{% block head %}
+	{{ sylius_metadata_render(product, null, { 'defaults': {
+		'title': settings.title|default('sylius.meta.frontend_title'|trans),
+		'description': settings.meta_description|default('sylius.meta.frontend_description'|trans),
+		'keywords': settings.meta_description|default('sylius.meta.frontend_keywords'|trans)
+	} })|raw }}
+{% endblock %}
+
 {% block stylesheets %}
 {{ parent() }}
 <link href="{{ asset('js/themes/base/jquery-ui.css') }}" type="text/css" rel="stylesheet" />
@@ -107,12 +119,11 @@ $(document).ready(function() {
 {# end CALENDAR #}
 {% endblock %}
 
-{% block body %}    
-	<body class="single-product" id="product-listing">
-{% endblock %}
+{#{% block body %}#}
+	{#<body class="single-product" id="product-listing">#}
+{#{% endblock %}#}
 
 {% block content %}
-{% for item in product  %}
 
 <div class="container-fluid container-product-listing">
 	<div class="row">
@@ -126,11 +137,10 @@ $(document).ready(function() {
 						<div class="input-group-btn search-panel">
 							<select class="btn btn_drop_category dropdown-toggle" name="category"> 
 								<option value="all"> All Category </option>
-							{% for subitem in categoriesSelect %}
-								<option value="{{subitem.id}}"> {{ subitem.name }} </option>
-							{% endfor %}
+							{#{% for subitem in categoriesSelect %}#}
+								{#<option value="{{subproduct.id}}"> {{ subproduct.name }} </option>#}
+							{#{% endfor %}#}
 							</select>
-							
 						</div>
 						<span class="input-group-btn search-panel">
 						    <button type="submit" class="btn btn_search_item"><span>SEARCH</span></button>
@@ -142,14 +152,14 @@ $(document).ready(function() {
 				<div class="pull-left">
 					<p>Listed in category  >  <a href="{{ path('sylius_homepage') }}"><span class="blue_bread">Home</span></a>  >  
 						<span class="blue_bread">Category</span>   :
-						 {% for taxon in item.taxons %}<a href="{{ path('kulashare_product_filter_category', {'categoryId': taxon.id}) }}"><span class="blue_bread">{{ taxon.name }}</span></a> {% endfor %}
+						 {% for taxon in product.taxons %}<a href="{{ path('kulashare_product_taxon', {'taxon': taxon.id}) }}"><span class="blue_bread">{{ taxon.name }}</span></a> {% endfor %}
 					</p>
 				</div>	
 			</div>
 			<div class="col-sm-12 col-xs-12 product_single_details">
 				<div class="col-sm-5" id="image_section">
 					<div class="cont_image_product text-center">
-						<img src="{{ item.image ? item.image.path : asset('img/logo-ks.png') }}"  class="img-responsive" alt="{{ item.name }}" />
+						<img src="{{ product.image ? product.image.path : asset('img/logo-ks.png') }}"  class="img-responsive" alt="{{ product.name }}" />
 						<!--	<a href="#"><p class="enlarge_btn"><span class="glyphicon glyphicon-search"></span>Click here to enlarge </p></a> -->
 					</div>		
 				<!-- <div class="product_thumbnails text-center">
@@ -158,7 +168,7 @@ $(document).ready(function() {
 					<p  class="text-center"><a class="btn btn-see-all" href="#">Recommended Safety Equipment</a></p> -->
 				</div>
 				<div class="col-sm-5" id="product">
-					<h3 class="title_product">{{item.name}}</h3>
+					<h3 class="title_product">{{product.name}}</h3>
 					<p class="by_name"><span>by</span>    <span>|</span>   ** Borrower reviews</p>
 			<!--	<div class="item-condition">
 						<p>Item condition: </p>
@@ -179,20 +189,20 @@ $(document).ready(function() {
 						<p>Quantity: <input type="text"id="inputValue"></p>
 					</div>  -->
 					<div class="price_product">
-						<p>Price: <span class="span_price_red">${{(item.price/100) |number_format(2, '.', ',')}}</span> /hour <!-- <a href="#" class="btn btn-see-all">Optional rate</a> --></p>
+						<p>Price: <span class="span_price_red">${{(product.price/100) |number_format(2, '.', ',')}}</span> /hour <!-- <a href="#" class="btn btn-see-all">Optional rate</a> --></p>
 					</div>
 					<div class="product-description">
 						<p>Description:</p>
 						<ul class="prod-desc">
-							<li><p> {{item.description}}</p> </li>
+							<li><p> {{product.description}}</p> </li>
 						</ul>
 					</div> <!-- /.product-description -->
 					<div class="item-location">
-						<p><span>Item location:</span> Lat: {{item.latitud}} Long: {{item.longitud}} <i class="glyphicon glyphicon-map-marker"></i> Less than ** mile</p>
+						<p><span>Item location:</span> Lat: {{product.latitud}} Long: {{product.longitud}} <i class="glyphicon glyphicon-map-marker"></i> Less than ** mile</p>
 						
 						<div id="map" style="width:425px; height:260px"></div>
 							<div style="display: none;" class="get">
-								<input class="active" value="{{item.latitud}};{{item.longitud}};**;**;**;**" rel="**">					
+								<input class="active" value="{{product.latitud}};{{product.longitud}};**;**;**;**" rel="**">					
 							</div>			
 					</div>
 				</div> <!-- /#product -->
@@ -257,8 +267,8 @@ window.onload = loadScript;
 var directionsDisplay,
     directionsService,
     map;
-var lat='{{ item.latitud }}';
-		var long='{{ item.longitud }}';	
+var lat='{{ product.latitud }}';
+		var long='{{ product.longitud }}';	
 	function initialize() {
 	var directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer();
@@ -324,11 +334,11 @@ var lat='{{ item.latitud }}';
 						</div>
 						<div class="modal-body">
 							<div class="item-lt col-sm-4 col-xs-12">
-								<div class="item-lt-imagen"><img src="{{ item.image ? item.image.path : 'http://placehold.it/300x300' }}"  class="img-responsive" alt="{{ item.name }}" />
+								<div class="item-lt-imagen"><img src="{{ product.image ? product.image.path : 'http://placehold.it/300x300' }}"  class="img-responsive" alt="{{ product.name }}" />
 								</div>
 								<div class="item-lt-description">
-									<p class="title">{{item.name}}</p> 
-									<p class="price"><span>${{item.price |number_format(2, '.', ',')}}</span> /hour</p>
+									<p class="title">{{product.name}}</p> 
+									<p class="price"><span>${{product.price |number_format(2, '.', ',')}}</span> /hour</p>
 									<p class="short-desc">Compact and Lightweight</p>
 									<p class="distance"><i class="glyphicon glyphicon-map-marker"></i> Less than ** mile · **</p>
 								</div>
@@ -343,7 +353,7 @@ var lat='{{ item.latitud }}';
 								</div>
 							</div>		<!--/.item-lt	 -->
 							<form id="cons">
-								<input type="hidden" value="{{item.ID}}" name="product_id"/>
+								<input type="hidden" value="{{product.ID}}" name="product_id"/>
 								<div class="advise-right col-sm-8 col-xs-12">
 									<div class="subtitle-advise-right">
 										<h3>I'm ready to schedule<br>my rental!</h3>
@@ -415,6 +425,5 @@ var lat='{{ item.latitud }}';
         
 
         </script>
-
-{% endfor %}
+	
 {% endblock %}

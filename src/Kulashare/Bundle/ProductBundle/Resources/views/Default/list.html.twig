@@ -1,7 +1,8 @@
 {% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
-{% block javascripts %}		
-	
-{% endblock %}
+
+{% import 'SyliusWebBundle:Frontend/Macros:buttons.html.twig' as buttons %}
+{% from 'SyliusWebBundle:Frontend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Frontend/Product:macros.html.twig' import list %}
 
 {% block content %}
 	<div class="container wrap-my-products">
@@ -12,7 +13,7 @@
 		    <img class="img-responsive" style="max-width:860px; width: 100%" src="{{ asset('img/my-products.jpg') }}" alt="Product banner"/>
         	
 		    <div class="col-sm-9"><h3 class="panel-title" style="padding-top:12px;">My Products</h3></div><div class="col-sm-3 hidden-xs"><div style="text-align:right">
-		  		<a class="btn btn-primary new-productbtn" href="{{ path('kulashare_product_add') }}"> 
+		  		<a class="btn btn-primary new-productbtn" href="{{ path('sylius_product_create') }}">
 		  			<i class="glyphicon glyphicon-plus"></i><span>New Product</span>
 		  		</a>
 		  	</div>
@@ -20,7 +21,7 @@
 		  </div>
 		  <div class="panel-body">
 		  {% if products|length > 0 %}
-		  {{ sylius_resource_paginate(paginator, [10, 30, 50]) }}
+			  {{ pagination(products) }}
 		    <table class="table table-striped">
 			  <thead>
 			  	<tr>
@@ -43,13 +44,13 @@
 			  		<td>{{item.description}}</td>
 			  		<td>{{item.updatedAt |date('Y-m-d') }}</td>
 			  		<td>
-			  			<a href="{{ path('kulashare_product_show',  {'id': item.id}) }}" target="_blank" class="white"><div class="text-center col-sm-3 col-xs-3 btn btn-primary"  title="View Item" style="margin: 2px 5px;padding: 6px;">
+			  			<a href="{{ path('sylius_product_show',  {'id': item.id}) }}" target="_blank" class="white"><div class="text-center col-sm-3 col-xs-3 btn btn-primary"  title="View Item" style="margin: 2px 5px;padding: 6px;">
 						    <i class="glyphicon glyphicon-eye-open"></i>
 						</div></a>
-			  			<a href="{{ path('kulashare_product_edit',  {'id': item.id}) }}" class="white"><div class="text-center col-sm-3 col-xs-3 btn btn-primary" title="Edit Item" style="margin: 2px 5px;padding: 6px;">
+			  			<a href="{{ path('sylius_product_update',  {'id': item.id}) }}" class="white"><div class="text-center col-sm-3 col-xs-3 btn btn-primary" title="Edit Item" style="margin: 2px 5px;padding: 6px;">
 						    <i class="glyphicon glyphicon-pencil"></i>
 						</div></a>
-						<a href="{{ path('kulashare_product_delete',  {'id': item.id})}}" class="white"><div class="text-center  col-sm-3 col-xs-3 btn btn-danger" title="Delete Item" style="margin: 2px 5px;padding: 6px;">
+						<a href="{{ path('sylius_product_delete',  {'id': item.id})}}" class="white"><div class="text-center  col-sm-3 col-xs-3 btn btn-danger" title="Delete Item" style="margin: 2px 5px;padding: 6px;">
 						    <i class="glyphicon glyphicon-trash"></i>
 						</div></a>
 			  		</th>
@@ -63,7 +64,7 @@
 		  </div>
 		  <div class="panel-footer">
 		  	<div style="text-align:right">
-		  		<a class="btn btn-primary" href="{{ path('kulashare_product_add') }}"> 
+		  		<a class="btn btn-primary" href="{{ path('sylius_product_create') }}">
 		  			<i class="glyphicon glyphicon-plus"></i><span>New Product</span>
 		  		</a>
 		  	</div>

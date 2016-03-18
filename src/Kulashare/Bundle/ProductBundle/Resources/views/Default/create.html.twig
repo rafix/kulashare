@@ -1,0 +1,46 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% from 'SyliusResourceBundle:Macros:actions.html.twig' import create %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{% javascripts output='assets/compiled/backend_product.js'
+	'bundles/syliusattribute/js/sylius-attribute.js'
+	'bundles/syliusshipping/js/prototype-handler.js'
+	'bundles/syliusweb/js/dynamic-property-types.js'
+	'@A2lixTranslationFormBundle/Resources/public/js/a2lix_translation_bootstrap.js'
+	%}
+	<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+<div class="in-sec8">
+            <div class="in-sec panel panel-default wrap-produc-new">
+	
+{#{% if(update)  %}#}
+	{#<form id="product_form" action="{{path('kulashare_product_update', {'id' : id})}}" method="post" {{ form_enctype(form) }} class="form-horizontal" >#}
+	{##}
+{#{% else %}#}
+	<form id="product_form" action="{{ path('sylius_product_create') }}" method="post" {{ form_enctype(form) }}  >
+{#{% endif %}#}
+{% image 'img/product-listing-banner.jpg' %}
+		    <img class="img-responsive" style="max-width:860px; width: 100%" src="{{ asset_url }}" alt="Product banner"/>
+        {% endimage %}
+
+		<div class="form-actions clearfix">
+		<button type="submit" onclick="$('#product_form').attr('target', '_blank');" class="btn btn-info btn-lg" formaction="{{ path('kulashare_product_preview') }}">
+            <i class="glyphicon glyphicon-eye-open"></i>
+            Preview
+        </button>
+        <button class="btn btn-success btn-lg" type="submit" onclick="$('#product_form').attr('target', '');">
+            <i class="icon-user"></i>
+            Save
+        </button>
+    </div>
+		 </form>
+
+</div>
+</div>
+{% endblock %}
+
