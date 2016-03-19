@@ -17,16 +17,10 @@
 {% block content %}
 <div class="in-sec8">
             <div class="in-sec panel panel-default wrap-produc-new">
-	
-{#{% if(update)  %}#}
-	{#<form id="product_form" action="{{path('kulashare_product_update', {'id' : id})}}" method="post" {{ form_enctype(form) }} class="form-horizontal" >#}
-	{##}
-{#{% else %}#}
-	<form id="product_form" action="{{ path('sylius_product_create') }}" method="post" {{ form_enctype(form) }}  >
-{#{% endif %}#}
-{% image 'img/product-listing-banner.jpg' %}
-		    <img class="img-responsive" style="max-width:860px; width: 100%" src="{{ asset_url }}" alt="Product banner"/>
-        {% endimage %}
+
+				<form action="{{ path('sylius_backend_product_create', {'archetype': app.request.get('archetype')}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
+					{% include 'SyliusWebBundle:Backend/Product:_form.html.twig' %}
+					{{ create() }}
 
 		<div class="form-actions clearfix">
 		<button type="submit" onclick="$('#product_form').attr('target', '_blank');" class="btn btn-info btn-lg" formaction="{{ path('kulashare_product_preview') }}">

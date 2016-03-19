@@ -19,11 +19,11 @@ class ProductVariantType extends BaseVariantType
         parent::buildForm($builder, $options);
         //$builder->remove('sku');
         //$builder->remove('pricingCalculator');
-        $builder->remove('width');
-        $builder->remove('height');
+//        $builder->remove('width');
+//        $builder->remove('height');
         //$builder->remove('depth');
-        $builder->remove('weight');
-        $builder->remove('availableOnDemand');
+//        $builder->remove('weight');
+//        $builder->remove('availableOnDemand');
         //$builder->remove('availableOn');
         //$builder->remove('presentation');  
         $builder->addEventListener(

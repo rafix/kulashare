@@ -89,7 +89,7 @@
                                         {% for  item in products | slice(0,3) %}
                                             <li class="col-sm-4 col-xs-4 item-watch-list">
                                                  <img src="{{ item.image ? item.image.path : asset('img/logo-ks.png') }}"  alt="{{ item.name }}" />
-                                                <a href="{{ path('kulashare_product_show',{'id': item.id })}}">Item {{ item.Id }}</a>
+                                                <a href="{{ path('sylius_product_show',{'id': item.id })}}">Item {{ item.Id }}</a>
                                             </li>                                            
                                         {% endfor %}                                        
                                     </ul>
@@ -101,7 +101,7 @@
                                         {% for  item in products | slice(3,5) %}
                                             <li class="col-sm-4 col-xs-4 item-watch-list">
                                                 <img src="{{ item.image ? item.image.path : asset('img/logo-ks.png') }}"  alt="{{ item.name }}" />
-                                                <a href="{{ path('kulashare_product_show',{'id': item.id })}}">Item {{ item.Id }}</a>
+                                                <a href="{{ path('sylius_product_show',{'id': item.id })}}">Item {{ item.Id }}</a>
                                             </li>                                            
                                         {% endfor %}
                                     </ul>

@@ -24,8 +24,8 @@ sylius_product:
             translation:
                 classes:
                     model: Kulashare\Bundle\ProductBundle\Entity\ProductTranslation
-                    form:
-                        default: Kulashare\Bundle\ProductBundle\Form\Type\ProductTranslationType
+#                    form:
+#                        default: Kulashare\Bundle\ProductBundle\Form\Type\ProductTranslationType
 
 sylius_variation:
     resources:
@@ -34,8 +34,8 @@ sylius_variation:
                 classes:
                     model: Sylius\Component\Core\Model\ProductVariant
                     repository: Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductVariantRepository
-                    form:
-                        default: Kulashare\Bundle\ProductBundle\Form\Type\ProductVariantType
+#                    form:
+#                        default: Kulashare\Bundle\ProductBundle\Form\Type\ProductVariantType
 
 sylius_resource:
     resources:

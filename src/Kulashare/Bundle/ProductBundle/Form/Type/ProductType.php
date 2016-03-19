@@ -14,16 +14,6 @@ class ProductType extends BaseProductType
     {
         parent::buildForm($builder, $options);
 
-        //field to remove from de Form
-        $builder->remove('channels');
-        $builder->remove('taxCategory');
-        $builder->remove('shippingCategory');
-        $builder->remove('restrictedZone');
-        $builder->remove('variantSelectionMethod');
-        //$builder->remove('options');
-        //$builder->remove('attributes');
-        //$builder->remove('translations');
-
         $builder
             ->add('status', 'choice', array(
                 'label' => 'Status',
