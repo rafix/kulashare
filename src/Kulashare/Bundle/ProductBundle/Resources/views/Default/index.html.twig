@@ -12,18 +12,16 @@
 {% block content %}
 	<!-- region filter-->
 	<div class="container" id="storefront">
-	<div class="col-sm-4" id="product-listing-sidebar-left">
-
-					<div class="title-dashboard">
-						<h3>Refine Search</h3>
-					</div>
-
-					<div id="section-1" class="sidebar-left-section">
-							<p id="title-ul-category">Category</p>
-						{{ knp_menu_render('sylius.frontend.taxons', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
-					</div>  <!-- /#section-1 -->
-
-		{% include 'SyliusSearchBundle::filter_form.html.twig' %}
+		<div class="col-sm-4" id="product-listing-sidebar-left">
+			<div class="title-dashboard">
+				<h3>Refine Search</h3>
+			</div>
+			<div id="section-1" class="sidebar-left-section">
+					<p id="title-ul-category">Category</p>
+				{{ knp_menu_render('sylius.frontend.taxons', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+			</div>  <!-- /#section-1 -->
+			{% include 'SyliusSearchBundle::filter_form.html.twig' %}
+		</div>
 	<!-- product list-->
 	<div class="col-sm-8" id="product-listing-dashboard">
 		<div class="col-sm-12 col-xs-12 search_items_form">
