@@ -30,7 +30,7 @@ class ProductType extends BaseProductType
             ->add('longitud', 'hidden', array(
                 'data' => '0.0000000',
             ))
-            ->add('translations', 'collection', array('type' => new ProductTranslationType('Kulashare\Bundle\ProductBundle\Entity\ProductTranslation'), 'label' => false))
+//            ->add('translations', 'collection', array('type' => new ProductTranslationType('Kulashare\Bundle\ProductBundle\Entity\ProductTranslation'), 'label' => false))
             ;
     }
 }
