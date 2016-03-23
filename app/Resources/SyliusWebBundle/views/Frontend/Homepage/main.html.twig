@@ -556,8 +556,8 @@
 {% endblock %}
 
 {% block content %}
-<!-- productos -->		
-{#{{ render(controller('KulashareStoreFrontBundle:HomePage:recentProducts')) }}#}
+<!-- productos -->
+	{{ render(url('sylius_partial_product_latest', {'limit': 9, 'template': 'SyliusWebBundle:Frontend/Product:latest.html.twig'})) }}
 <div class="in-sec in-sec7">
 			<div class="in-featbody col-sm-12 col-md-4 col-lg-4">			
 				<div class="in-featcont">

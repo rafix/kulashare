@@ -14,8 +14,8 @@ class ProductTranslationType extends BaseProductTranslationType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-        $builder->remove('metaKeywords');
-        $builder->remove('metaDescription');
+//        $builder->remove('metaKeywords');
+//        $builder->remove('metaDescription');
     }
 
     public function configureOptions(OptionsResolver $resolver)

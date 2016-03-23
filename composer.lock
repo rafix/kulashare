@@ -5154,16 +5154,16 @@
         },
         {
             "name": "omnipay/stripe",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/omnipay-stripe.git",
-                "reference": "6c4cef5b5168a58476eef6fa73b7875e15c94b6f"
+                "reference": "fe05ddd73d9ae38ca026dbc270ca98aaf3f99da4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-stripe/zipball/6c4cef5b5168a58476eef6fa73b7875e15c94b6f",
-                "reference": "6c4cef5b5168a58476eef6fa73b7875e15c94b6f",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-stripe/zipball/fe05ddd73d9ae38ca026dbc270ca98aaf3f99da4",
+                "reference": "fe05ddd73d9ae38ca026dbc270ca98aaf3f99da4",
                 "shasum": ""
             },
             "require": {
@@ -5207,7 +5207,7 @@
                 "payment",
                 "stripe"
             ],
-            "time": "2016-01-13 04:00:45"
+            "time": "2016-03-19 08:35:06"
         },
         {
             "name": "omnipay/targetpay",
@@ -5392,16 +5392,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "a93889dfb1c0ae465b62236ede8d00d3ea260952"
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a93889dfb1c0ae465b62236ede8d00d3ea260952",
-                "reference": "a93889dfb1c0ae465b62236ede8d00d3ea260952",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
                 "shasum": ""
             },
             "require": {
@@ -5436,7 +5436,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-18 17:16:04"
+            "time": "2016-03-18 20:34:03"
         },
         {
             "name": "payum/iso4217",
@@ -6631,12 +6631,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "d9533076fe607e11bc8da78ec189365f62149cb3"
+                "reference": "252aa7915dec3d30081c19c727e37395e2e7520d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/d9533076fe607e11bc8da78ec189365f62149cb3",
-                "reference": "d9533076fe607e11bc8da78ec189365f62149cb3",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/252aa7915dec3d30081c19c727e37395e2e7520d",
+                "reference": "252aa7915dec3d30081c19c727e37395e2e7520d",
                 "shasum": ""
             },
             "require": {
@@ -6831,7 +6831,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2016-03-18 13:42:10"
+            "time": "2016-03-21 11:43:01"
         },
         {
             "name": "symfony-cmf/block-bundle",
@@ -7208,36 +7208,38 @@
         },
         {
             "name": "symfony-cmf/routing",
-            "version": "1.3.0",
+            "version": "1.4.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Routing.git",
-                "reference": "8e87981d72c6930a27585dcd3119f3199f6cb2a6"
+                "reference": "8f172869f59e2fe70ec5b2525c2807b665b18d6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/8e87981d72c6930a27585dcd3119f3199f6cb2a6",
-                "reference": "8e87981d72c6930a27585dcd3119f3199f6cb2a6",
+                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/8f172869f59e2fe70ec5b2525c2807b665b18d6c",
+                "reference": "8f172869f59e2fe70ec5b2525c2807b665b18d6c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "psr/log": "~1.0",
-                "symfony/http-kernel": "~2.2",
-                "symfony/routing": "~2.2"
+                "php": "^5.3.9|^7.0",
+                "psr/log": "1.*",
+                "symfony/http-kernel": "^2.2|3.*",
+                "symfony/routing": "^2.2|3.*"
             },
             "require-dev": {
-                "symfony/config": "~2.2",
-                "symfony/dependency-injection": "~2.0@stable",
-                "symfony/event-dispatcher": "~2.1"
+                "friendsofsymfony/jsrouting-bundle": "@dev",
+                "symfony-cmf/testing": "^1.3@dev",
+                "symfony/config": "^2.2|3.*",
+                "symfony/dependency-injection": "^2.0.5|3.*",
+                "symfony/event-dispatcher": "^2.1|3.*"
             },
             "suggest": {
-                "symfony/event-dispatcher": "DynamicRouter can optionally trigger an event at the start of matching. Minimal version ~2.1"
+                "symfony/event-dispatcher": "DynamicRouter can optionally trigger an event at the start of matching. Minimal version (~2.1)"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -7261,25 +7263,25 @@
                 "database",
                 "routing"
             ],
-            "time": "2014-10-20 20:55:17"
+            "time": "2016-02-27 22:33:03"
         },
         {
             "name": "symfony-cmf/routing-bundle",
-            "version": "1.4.0-RC1",
+            "version": "1.4.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/RoutingBundle.git",
-                "reference": "827703c49b81dd34833aca8b493ab717a38e5afa"
+                "reference": "a7317937e7fe08d01dfcdf18b86d64afd98bbee7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/RoutingBundle/zipball/827703c49b81dd34833aca8b493ab717a38e5afa",
-                "reference": "827703c49b81dd34833aca8b493ab717a38e5afa",
+                "url": "https://api.github.com/repos/symfony-cmf/RoutingBundle/zipball/a7317937e7fe08d01dfcdf18b86d64afd98bbee7",
+                "reference": "a7317937e7fe08d01dfcdf18b86d64afd98bbee7",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.9|^7.0",
-                "symfony-cmf/routing": "~1.2",
+                "symfony-cmf/routing": "^1.4.0-RC3",
                 "symfony/framework-bundle": "~2.3"
             },
             "require-dev": {
@@ -7329,7 +7331,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2016-01-21 16:20:40"
+            "time": "2016-03-19 11:51:50"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -9981,16 +9983,16 @@
         },
         {
             "name": "phpspec/phpspec",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "5528ce1e93a1efa090c9404aba3395c329b4e6ed"
+                "reference": "385ecb015e97c13818074f1517928b24d4a26067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/5528ce1e93a1efa090c9404aba3395c329b4e6ed",
-                "reference": "5528ce1e93a1efa090c9404aba3395c329b4e6ed",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/385ecb015e97c13818074f1517928b24d4a26067",
+                "reference": "385ecb015e97c13818074f1517928b24d4a26067",
                 "shasum": ""
             },
             "require": {
@@ -10055,7 +10057,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2016-01-01 10:17:54"
+            "time": "2016-03-20 20:34:32"
         },
         {
             "name": "phpspec/prophecy",

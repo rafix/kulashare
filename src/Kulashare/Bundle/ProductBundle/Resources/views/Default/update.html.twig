@@ -1,0 +1,40 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% from 'SyliusResourceBundle:Macros:actions.html.twig' import create %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{% javascripts output='assets/compiled/backend_product.js'
+	'bundles/syliusattribute/js/sylius-attribute.js'
+	'bundles/syliusshipping/js/prototype-handler.js'
+	'bundles/syliusweb/js/dynamic-property-types.js'
+	'@A2lixTranslationFormBundle/Resources/public/js/a2lix_translation_bootstrap.js'
+	%}
+	<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+<div class="in-sec8">
+            <div class="in-sec panel panel-default wrap-produc-new">
+
+				<form action="{{ path('sylius_backend_product_update', {'id': product.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
+					{% include 'SyliusWebBundle:Backend/Product:_form.html.twig' %}
+					{{ create() }}
+
+		<div class="form-actions clearfix">
+		<button type="submit" onclick="$('#product_form').attr('target', '_blank');" class="btn btn-info btn-lg" formaction="{{ path('kulashare_product_preview') }}">
+            <i class="glyphicon glyphicon-eye-open"></i>
+            Preview
+        </button>
+        <button class="btn btn-success btn-lg" type="submit" onclick="$('#product_form').attr('target', '');">
+            <i class="icon-user"></i>
+            Save
+        </button>
+    </div>
+		 </form>
+
+</div>
+</div>
+{% endblock %}
+

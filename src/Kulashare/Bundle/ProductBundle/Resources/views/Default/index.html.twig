@@ -21,6 +21,8 @@
 				{{ knp_menu_render('sylius.frontend.taxons', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
 			</div>  <!-- /#section-1 -->
 			{% include 'SyliusSearchBundle::filter_form.html.twig' %}
+			{{ knp_menu_render('sylius.frontend.taxons', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+			{{ render(url('sylius_partial_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}
 		</div>
 	<!-- product list-->
 	<div class="col-sm-8" id="product-listing-dashboard">
