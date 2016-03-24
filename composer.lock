@@ -6629,12 +6629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "c03da8088352b8ce540fe930b705ca54cc825036"
+                "reference": "b87c29e686f74157ea1aaf1cadb9c1e018eb7385"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/c03da8088352b8ce540fe930b705ca54cc825036",
-                "reference": "c03da8088352b8ce540fe930b705ca54cc825036",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/b87c29e686f74157ea1aaf1cadb9c1e018eb7385",
+                "reference": "b87c29e686f74157ea1aaf1cadb9c1e018eb7385",
                 "shasum": ""
             },
             "require": {
@@ -6829,7 +6829,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2016-03-23 11:41:26"
+            "time": "2016-03-24 14:31:49"
         },
         {
             "name": "symfony-cmf/block-bundle",
@@ -9652,12 +9652,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lakion/ApiTestCase.git",
-                "reference": "441618f9e447ec55a17dfe10a5b72f0b990e6efa"
+                "reference": "e311520158226c1a7d2b8760c38346a8f2ed1e82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lakion/ApiTestCase/zipball/441618f9e447ec55a17dfe10a5b72f0b990e6efa",
-                "reference": "441618f9e447ec55a17dfe10a5b72f0b990e6efa",
+                "url": "https://api.github.com/repos/Lakion/ApiTestCase/zipball/e311520158226c1a7d2b8760c38346a8f2ed1e82",
+                "reference": "e311520158226c1a7d2b8760c38346a8f2ed1e82",
                 "shasum": ""
             },
             "require": {
@@ -9665,8 +9665,8 @@
                 "doctrine/data-fixtures": "^1.1",
                 "doctrine/doctrine-bundle": "^1.6",
                 "doctrine/orm": "^2.4.8",
-                "nelmio/alice": "@dev",
-                "php": ">=5.5.9",
+                "nelmio/alice": "^2.1.4",
+                "php": "^5.5.9|^7.0",
                 "phpspec/php-diff": "^1.0",
                 "phpunit/phpunit": "^4.8|^5.0",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
@@ -9722,7 +9722,7 @@
                 "testcase",
                 "xml"
             ],
-            "time": "2016-03-09 13:30:26"
+            "time": "2016-03-24 13:41:53"
         },
         {
             "name": "mockery/mockery",

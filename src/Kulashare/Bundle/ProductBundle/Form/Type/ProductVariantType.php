@@ -17,22 +17,22 @@ class ProductVariantType extends BaseVariantType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-        //$builder->remove('sku');
+        $builder->remove('sku');
         //$builder->remove('pricingCalculator');
 //        $builder->remove('width');
 //        $builder->remove('height');
-        //$builder->remove('depth');
+//        $builder->remove('depth');
 //        $builder->remove('weight');
 //        $builder->remove('availableOnDemand');
         //$builder->remove('availableOn');
-        //$builder->remove('presentation');  
-        $builder->addEventListener(
-            FormEvents::PRE_SUBMIT,
-            function (FormEvent $event) {
+//        $builder->remove('presentation');
+//        $builder->addEventListener(
+//            FormEvents::PRE_SUBMIT,
+//            function (FormEvent $event) {
                 // $help = new ImageUploader();
                 // $image_= new ImageUploadListener($help);
                 // $image_->uploadProductImage($event);
-                $form = $event->getForm();
+//                $form = $event->getForm();
 
                 // this would be your entity, i.e. SportMeetup
                 // $data = $event->getData();
@@ -40,7 +40,7 @@ class ProductVariantType extends BaseVariantType
                 // print_r($event->getData());
                 // die();
 
-            }
-        );
+//            }
+//        );
     }
 }
